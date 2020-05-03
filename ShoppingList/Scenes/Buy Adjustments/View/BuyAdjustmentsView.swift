@@ -49,6 +49,7 @@ class BuyAdjustmentsView : UIView {
         let label = UILabel()
 
         label.text = "Impostos por estado"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
 
         return label
@@ -92,6 +93,30 @@ extension BuyAdjustmentsView : ViewConfigurator {
     }
 
     func setupConstraints() {
+        stackQuotation.anchor(top: safeAreaLayoutGuide.topAnchor,
+                              leading: safeAreaLayoutGuide.leadingAnchor,
+                              bottom: nil,
+                              trailing: safeAreaLayoutGuide.trailingAnchor)
+
+        stackTax.anchor(top: stackQuotation.bottomAnchor,
+                        leading: safeAreaLayoutGuide.leadingAnchor,
+                        bottom: nil,
+                        trailing: safeAreaLayoutGuide.trailingAnchor)
+
+        sectionLabel.anchor(top: stackTax.bottomAnchor,
+                            leading: safeAreaLayoutGuide.leadingAnchor,
+                            bottom: nil,
+                            trailing: safeAreaLayoutGuide.trailingAnchor)
+
+        statesTable.anchor(top: sectionLabel.bottomAnchor,
+                           leading: safeAreaLayoutGuide.leadingAnchor,
+                           bottom: addStateButton.topAnchor,
+                           trailing: safeAreaLayoutGuide.trailingAnchor)
+
+        addStateButton.anchor(top: nil,
+                              leading: nil,
+                              bottom: safeAreaLayoutGuide.bottomAnchor,
+                              trailing: nil)
     }
 
 }
