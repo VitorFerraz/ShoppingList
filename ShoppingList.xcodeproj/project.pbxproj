@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		510B10BD245F3EA300AD59D0 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10BA245F3EA300AD59D0 /* FeatureView.swift */; };
-		510B10BE245F3EA300AD59D0 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */; };
 		510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */; };
+		515D8AD0245F567D0058160E /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
 		903BB3B0245F01260074CB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AF245F01260074CB4E /* ViewController.swift */; };
@@ -44,9 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		510B10BA245F3EA300AD59D0 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
-		510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
+		515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		903BB3A8245F01260074CB4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903BB3AD245F01260074CB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,44 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		510B10B7245F3EA300AD59D0 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				510B10C0245F3EEA00AD59D0 /* Buy Adjustments */,
-				510B10B8245F3EA300AD59D0 /* Buy Items List */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		510B10B8245F3EA300AD59D0 /* Buy Items List */ = {
-			isa = PBXGroup;
-			children = (
-				510B10B9245F3EA300AD59D0 /* View */,
-				510B10BB245F3EA300AD59D0 /* ViewController */,
-			);
-			path = "Buy Items List";
-			sourceTree = "<group>";
-		};
-		510B10B9245F3EA300AD59D0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				510B10BA245F3EA300AD59D0 /* FeatureView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		510B10BB245F3EA300AD59D0 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		510B10C0245F3EEA00AD59D0 /* Buy Adjustments */ = {
+		515D8ACD245F56460058160E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		515D8ACE245F567D0058160E /* Buy Adjustments */ = {
+			isa = PBXGroup;
+			children = (
+				515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */,
 			);
 			path = "Buy Adjustments";
 			sourceTree = "<group>";
@@ -140,6 +112,7 @@
 				903BB3AA245F01260074CB4E /* ShoppingList */,
 				903BB3C4245F01270074CB4E /* ShoppingListTests */,
 				903BB3A9245F01260074CB4E /* Products */,
+				515D8ACD245F56460058160E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA22240245F3FE100D94EF0 /* Buy Items List */,
+				515D8ACE245F567D0058160E /* Buy Adjustments */,
 				EDA22245245F3FE100D94EF0 /* Total */,
 			);
 			path = Scenes;
@@ -410,6 +384,7 @@
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
 				903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */,
 				903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */,
+				515D8AD0245F567D0058160E /* BuyAdjustmentsViewController.swift in Sources */,
 				903BB3D6245F05160074CB4E /* Double+Formatter.swift in Sources */,
 				903BB3D8245F05340074CB4E /* NumberFormatter+Currency.swift in Sources */,
 			);
