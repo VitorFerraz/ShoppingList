@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20079D04245F3C3F00CE4E5C /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D01245F3C3E00CE4E5C /* FeatureView.swift */; };
+		20079D05245F3C3F00CE4E5C /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D03245F3C3E00CE4E5C /* FeatureViewController.swift */; };
+		20079D0A245F3D1700CE4E5C /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D09245F3D1700CE4E5C /* NewProductViewController.swift */; };
+		20079D0C245F3D2400CE4E5C /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D0B245F3D2400CE4E5C /* NewProductView.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
 		903BB3B0245F01260074CB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AF245F01260074CB4E /* ViewController.swift */; };
-		903BB3B3245F01260074CB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B1245F01260074CB4E /* Main.storyboard */; };
 		903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* ShoppingList.xcdatamodeld */; };
 		903BB3B8245F01270074CB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B7245F01270074CB4E /* Assets.xcassets */; };
 		903BB3BB245F01270074CB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B9245F01270074CB4E /* LaunchScreen.storyboard */; };
@@ -37,11 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20079D01245F3C3E00CE4E5C /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
+		20079D03245F3C3E00CE4E5C /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		20079D09245F3D1700CE4E5C /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		20079D0B245F3D2400CE4E5C /* NewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductView.swift; sourceTree = "<group>"; };
 		903BB3A8245F01260074CB4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903BB3AD245F01260074CB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		903BB3AF245F01260074CB4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		903BB3B2245F01260074CB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		903BB3B5245F01260074CB4E /* ShoppingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingList.xcdatamodel; sourceTree = "<group>"; };
 		903BB3B7245F01270074CB4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		903BB3BA245F01270074CB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +84,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20079CFE245F3C3E00CE4E5C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				20079D06245F3CEC00CE4E5C /* New Product */,
+				20079CFF245F3C3E00CE4E5C /* Buy Items List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		20079CFF245F3C3E00CE4E5C /* Buy Items List */ = {
+			isa = PBXGroup;
+			children = (
+				20079D00245F3C3E00CE4E5C /* View */,
+				20079D02245F3C3E00CE4E5C /* ViewController */,
+			);
+			path = "Buy Items List";
+			sourceTree = "<group>";
+		};
+		20079D00245F3C3E00CE4E5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20079D01245F3C3E00CE4E5C /* FeatureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20079D02245F3C3E00CE4E5C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20079D03245F3C3E00CE4E5C /* FeatureViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		20079D06245F3CEC00CE4E5C /* New Product */ = {
+			isa = PBXGroup;
+			children = (
+				20079D08245F3CFF00CE4E5C /* ViewController */,
+				20079D07245F3CFA00CE4E5C /* View */,
+			);
+			path = "New Product";
+			sourceTree = "<group>";
+		};
+		20079D07245F3CFA00CE4E5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20079D09245F3D1700CE4E5C /* NewProductViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20079D08245F3CFF00CE4E5C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20079D0B245F3D2400CE4E5C /* NewProductView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		903BB39F245F01250074CB4E = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +164,12 @@
 		903BB3AA245F01260074CB4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				20079CFE245F3C3E00CE4E5C /* Scenes */,
 				903BB3E5245F06FC0074CB4E /* CoreData */,
 				903BB3D0245F04CC0074CB4E /* Library */,
 				903BB3AB245F01260074CB4E /* AppDelegate.swift */,
 				903BB3AD245F01260074CB4E /* SceneDelegate.swift */,
 				903BB3AF245F01260074CB4E /* ViewController.swift */,
-				903BB3B1245F01260074CB4E /* Main.storyboard */,
 				903BB3B7245F01270074CB4E /* Assets.xcassets */,
 				903BB3B9245F01270074CB4E /* LaunchScreen.storyboard */,
 				903BB3BC245F01270074CB4E /* Info.plist */,
@@ -260,7 +325,6 @@
 			files = (
 				903BB3BB245F01270074CB4E /* LaunchScreen.storyboard in Resources */,
 				903BB3B8245F01270074CB4E /* Assets.xcassets in Resources */,
-				903BB3B3245F01260074CB4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +344,15 @@
 			files = (
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
+				20079D05245F3C3F00CE4E5C /* FeatureViewController.swift in Sources */,
+				20079D0C245F3D2400CE4E5C /* NewProductView.swift in Sources */,
+				20079D0A245F3D1700CE4E5C /* NewProductViewController.swift in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
 				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
 				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
+				20079D04245F3C3F00CE4E5C /* FeatureView.swift in Sources */,
 				903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */,
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
 				903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */,
@@ -313,14 +381,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		903BB3B1245F01260074CB4E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				903BB3B2245F01260074CB4E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		903BB3B9245F01270074CB4E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
