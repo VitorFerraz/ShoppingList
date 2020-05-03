@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */; };
 		515D8AD0245F567D0058160E /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
@@ -375,7 +374,6 @@
 				EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
 				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
-				510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */,
 				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
 				EDA22249245F3FE200D94EF0 /* FeatureView.swift in Sources */,

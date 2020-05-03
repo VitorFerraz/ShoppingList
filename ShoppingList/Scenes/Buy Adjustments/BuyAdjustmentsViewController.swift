@@ -108,3 +108,23 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
 extension BuyAdjustmentsViewController : UITableViewDelegate {
 
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+struct BuyAdjustmentsViewRepresentable: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        return BuyAdjustmentsViewController().view!
+    }
+
+    func updateUIView(_ view: UIView, context: Context) {
+
+    }
+}
+
+@available(iOS 13.0, *)
+struct BuyAdjustmentsViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        BuyAdjustmentsViewRepresentable()
+    }
+}
+#endif
