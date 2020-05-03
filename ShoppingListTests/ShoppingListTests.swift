@@ -7,63 +7,28 @@
 //
 
 import XCTest
-import CoreData
-
 @testable import ShoppingList
 
 class ShoppingListTests: XCTestCase {
-    var manager: CoredataManager!
-    override func setUp() {
-        super.setUp()
-        manager = CoredataManager.init()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        testDeleteAll()
-        manager = nil
-    }
-    func testCreateItem() {
-        createItem()
-    }
-    
-    func testRetriveItems() {
-        createItem()
-        let objects = manager.fetchObjects()
-        XCTAssertEqual(objects.count, 1)
-    }
-    
-    func testdeleteItem() {
-        createItem()
-        let objects = manager.fetchObjects()
-        let count = objects.count
-        manager.delete(item: objects.first! )
-        let newCount = manager.fetchObjects().count
-        XCTAssertNotEqual(count, newCount - 1)
-    }
-    
-    func testDeleteAll() {
-        deleteAll()
-    }
-    
-    func createItem() {
-        let item = Teste(context: manager.context)
-        item.title = UUID().uuidString
-        do {
-            try manager.save()
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
-    }
-    
-    func deleteAll() {
-        do {
-            try manager.deleteAll(item: Teste.self)
-            let objects = manager.fetchObjects()
-            XCTAssertEqual(objects.count, 0)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
-    }
-}
 
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+
+}
