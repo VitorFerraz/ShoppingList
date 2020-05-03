@@ -10,15 +10,31 @@ import UIKit
 import SwiftUI
 
 class ViewController: UIViewController {
-
+    let label = UILabel()
+    let teste = FeatureView()
+    let button = UIButton(type: .contactAdd)
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
+        setup()
         
     }
+}
 
-
+extension ViewController: ViewConfigurator {
+    
+    func addViewHierarchy() {
+        label.text = "teste"
+        view.addSubview(label)
+        view.addSubview(teste)
+        
+    }
+    
+    func setupConstraints() {
+        label.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
+        teste.fillSuperview(padding: .init(top: 50, left: 0, bottom: 0, right: 0))
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG

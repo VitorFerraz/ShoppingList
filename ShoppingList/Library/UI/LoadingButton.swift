@@ -22,7 +22,9 @@ protocol LoadingButton: class {
 extension LoadingButton {
   func startAnimating() {
     titleLabel?.alpha = 0
-    let activityIndicator = UIActivityIndicatorView.init(style: .white)
+    
+    let activityIndicator = UIActivityIndicatorView.init(style: .medium)
+    activityIndicator.color = .white
     activityIndicator.frame = CGRect(x: (bounds.width - activityIndicator.bounds.width) / 2,
                                      y: (bounds.height - activityIndicator.bounds.height) / 2,
                                      width: activityIndicator.bounds.width,
