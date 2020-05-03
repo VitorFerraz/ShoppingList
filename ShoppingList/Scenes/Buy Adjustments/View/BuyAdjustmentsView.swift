@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 class BuyAdjustmentsView : UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let quotationLabel: UILabel = {
         let label = UILabel()
@@ -65,6 +74,7 @@ class BuyAdjustmentsView : UIView {
         let button = UIButton()
 
         button.setTitle("Adicionar estado", for: .normal)
+        button.tintColor = .blue
 
         return button
     }()
@@ -116,7 +126,8 @@ extension BuyAdjustmentsView : ViewConfigurator {
         addStateButton.anchor(top: nil,
                               leading: nil,
                               bottom: safeAreaLayoutGuide.bottomAnchor,
-                              trailing: nil)
+                              trailing: safeAreaLayoutGuide.trailingAnchor,
+                              size: .init(width: 200, height: 200))
     }
 
 }
