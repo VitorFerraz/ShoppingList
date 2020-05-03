@@ -15,6 +15,15 @@
 		903BB3B8245F01270074CB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B7245F01270074CB4E /* Assets.xcassets */; };
 		903BB3BB245F01270074CB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B9245F01270074CB4E /* LaunchScreen.storyboard */; };
 		903BB3C6245F01270074CB4E /* ShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3C5245F01270074CB4E /* ShoppingListTests.swift */; };
+		903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */; };
+		903BB3D6245F05160074CB4E /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D5245F05160074CB4E /* Double+Formatter.swift */; };
+		903BB3D8245F05340074CB4E /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D7245F05340074CB4E /* NumberFormatter+Currency.swift */; };
+		903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D9245F05770074CB4E /* Formatter+Percentage.swift */; };
+		903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3DB245F05BD0074CB4E /* String+Utils.swift */; };
+		903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3DE245F05EB0074CB4E /* LoadingButton.swift */; };
+		903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E0245F06160074CB4E /* ViewConfigurator.swift */; };
+		903BB3E4245F063F0074CB4E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E3245F063F0074CB4E /* Observable.swift */; };
+		903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E6245F08FA0074CB4E /* CoredataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,15 @@
 		903BB3C1245F01270074CB4E /* ShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3C5245F01270074CB4E /* ShoppingListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTests.swift; sourceTree = "<group>"; };
 		903BB3C7245F01270074CB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		903BB3D5245F05160074CB4E /* Double+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
+		903BB3D7245F05340074CB4E /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
+		903BB3D9245F05770074CB4E /* Formatter+Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Percentage.swift"; sourceTree = "<group>"; };
+		903BB3DB245F05BD0074CB4E /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		903BB3DE245F05EB0074CB4E /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		903BB3E0245F06160074CB4E /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
+		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,8 @@
 		903BB3AA245F01260074CB4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				903BB3E5245F06FC0074CB4E /* CoreData */,
+				903BB3D0245F04CC0074CB4E /* Library */,
 				903BB3AB245F01260074CB4E /* AppDelegate.swift */,
 				903BB3AD245F01260074CB4E /* SceneDelegate.swift */,
 				903BB3AF245F01260074CB4E /* ViewController.swift */,
@@ -100,6 +120,61 @@
 				903BB3C7245F01270074CB4E /* Info.plist */,
 			);
 			path = ShoppingListTests;
+			sourceTree = "<group>";
+		};
+		903BB3D0245F04CC0074CB4E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3E2245F06350074CB4E /* Helpers */,
+				903BB3DD245F05E50074CB4E /* UI */,
+				903BB3D4245F050D0074CB4E /* Number */,
+				903BB3D3245F05040074CB4E /* AutoLayout */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		903BB3D3245F05040074CB4E /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		903BB3D4245F050D0074CB4E /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3D5245F05160074CB4E /* Double+Formatter.swift */,
+				903BB3D7245F05340074CB4E /* NumberFormatter+Currency.swift */,
+				903BB3D9245F05770074CB4E /* Formatter+Percentage.swift */,
+				903BB3DB245F05BD0074CB4E /* String+Utils.swift */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		903BB3DD245F05E50074CB4E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3DE245F05EB0074CB4E /* LoadingButton.swift */,
+				903BB3E0245F06160074CB4E /* ViewConfigurator.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		903BB3E2245F06350074CB4E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3E3245F063F0074CB4E /* Observable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		903BB3E5245F06FC0074CB4E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				903BB3E6245F08FA0074CB4E /* CoredataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +280,17 @@
 			files = (
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
+				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
+				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
+				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
+				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
+				903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */,
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
+				903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */,
+				903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */,
+				903BB3D6245F05160074CB4E /* Double+Formatter.swift in Sources */,
+				903BB3D8245F05340074CB4E /* NumberFormatter+Currency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
