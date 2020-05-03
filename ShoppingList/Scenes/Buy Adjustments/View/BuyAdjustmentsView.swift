@@ -1,14 +1,15 @@
 //
-//  BuyAdjustmentsViewController.swift
+//  BuyAdjustmentsView.swift
 //  ShoppingList
 //
 //  Created by Pedro Xudre on 03/05/20.
 //  Copyright © 2020 vitor.ferrazvarela. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class BuyAdjustmentsViewController: UIViewController {
+class BuyAdjustmentsView : UIView {
 
     let quotationLabel: UILabel = {
         let label = UILabel()
@@ -56,8 +57,6 @@ class BuyAdjustmentsViewController: UIViewController {
     lazy var statesTable: UITableView = {
         let table = UITableView()
 
-        table.delegate = self
-
         return table
     }()
 
@@ -80,51 +79,19 @@ class BuyAdjustmentsViewController: UIViewController {
 
         return stack
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setup()
-    }
-
 }
 
-extension BuyAdjustmentsViewController : ViewConfigurator {
-
+extension BuyAdjustmentsView : ViewConfigurator {
+    
     func addViewHierarchy() {
-        view.addSubview(stackQuotation)
-        view.addSubview(stackTax)
-        view.addSubview(sectionLabel)
-        view.addSubview(statesTable)
-        view.addSubview(addStateButton)
+        addSubview(stackQuotation)
+        addSubview(stackTax)
+        addSubview(sectionLabel)
+        addSubview(statesTable)
+        addSubview(addStateButton)
     }
 
     func setupConstraints() {
-
-    }
-    
-}
-
-extension BuyAdjustmentsViewController : UITableViewDelegate {
-
-}
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-struct BuyAdjustmentsViewRepresentable: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        return BuyAdjustmentsViewController().view!
     }
 
-    func updateUIView(_ view: UIView, context: Context) {
-
-    }
 }
-
-@available(iOS 13.0, *)
-struct BuyAdjustmentsViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        BuyAdjustmentsViewRepresentable()
-    }
-}
-#endif
