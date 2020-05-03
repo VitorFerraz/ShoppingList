@@ -27,6 +27,10 @@
 		903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E0245F06160074CB4E /* ViewConfigurator.swift */; };
 		903BB3E4245F063F0074CB4E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E3245F063F0074CB4E /* Observable.swift */; };
 		903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E6245F08FA0074CB4E /* CoredataManager.swift */; };
+		EDA22249245F3FE200D94EF0 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22242245F3FE100D94EF0 /* FeatureView.swift */; };
+		EDA2224A245F3FE200D94EF0 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */; };
+		EDA2224D245F404700D94EF0 /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2224C245F404700D94EF0 /* TotalView.swift */; };
+		EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2224E245F407800D94EF0 /* TotalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		903BB3E0245F06160074CB4E /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
+		EDA22242245F3FE100D94EF0 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
+		EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		EDA2224C245F404700D94EF0 /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
+		EDA2224E245F407800D94EF0 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +155,7 @@
 		903BB3AA245F01260074CB4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
-				510B10B7245F3EA300AD59D0 /* Scenes */,
+				EDA2223F245F3FE100D94EF0 /* Scenes */,
 				903BB3E5245F06FC0074CB4E /* CoreData */,
 				903BB3D0245F04CC0074CB4E /* Library */,
 				903BB3AB245F01260074CB4E /* AppDelegate.swift */,
@@ -224,6 +232,65 @@
 				903BB3E6245F08FA0074CB4E /* CoredataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EDA2223F245F3FE100D94EF0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDA22240245F3FE100D94EF0 /* Buy Items List */,
+				EDA22245245F3FE100D94EF0 /* Total */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDA22240245F3FE100D94EF0 /* Buy Items List */ = {
+			isa = PBXGroup;
+			children = (
+				EDA22241245F3FE100D94EF0 /* View */,
+				EDA22243245F3FE100D94EF0 /* ViewController */,
+			);
+			path = "Buy Items List";
+			sourceTree = "<group>";
+		};
+		EDA22241245F3FE100D94EF0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDA22242245F3FE100D94EF0 /* FeatureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDA22243245F3FE100D94EF0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDA22245245F3FE100D94EF0 /* Total */ = {
+			isa = PBXGroup;
+			children = (
+				EDA22246245F3FE100D94EF0 /* View */,
+				EDA22248245F3FE100D94EF0 /* ViewController */,
+			);
+			path = Total;
+			sourceTree = "<group>";
+		};
+		EDA22246245F3FE100D94EF0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2224C245F404700D94EF0 /* TotalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDA22248245F3FE100D94EF0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2224E245F407800D94EF0 /* TotalViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,14 +396,16 @@
 			files = (
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
-				510B10BE245F3EA300AD59D0 /* FeatureViewController.swift in Sources */,
+				EDA2224A245F3FE200D94EF0 /* FeatureViewController.swift in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
+				EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
 				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
 				510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */,
 				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
-				510B10BD245F3EA300AD59D0 /* FeatureView.swift in Sources */,
+				EDA22249245F3FE200D94EF0 /* FeatureView.swift in Sources */,
+				EDA2224D245F404700D94EF0 /* TotalView.swift in Sources */,
 				903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */,
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
 				903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */,
