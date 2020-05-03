@@ -105,7 +105,7 @@
 		20079D15245F61E000CE4E5C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20079D16245F61E000CE4E5C /* NewProductViewController.swift */,
+				20079D18245F61E000CE4E5C /* NewProductView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,7 +113,7 @@
 		20079D17245F61E000CE4E5C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				20079D18245F61E000CE4E5C /* NewProductView.swift */,
+				20079D16245F61E000CE4E5C /* NewProductViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
