@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510B10BD245F3EA300AD59D0 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10BA245F3EA300AD59D0 /* FeatureView.swift */; };
+		510B10BE245F3EA300AD59D0 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */; };
+		510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
 		903BB3B0245F01260074CB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AF245F01260074CB4E /* ViewController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		510B10BA245F3EA300AD59D0 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
+		510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		903BB3A8245F01260074CB4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903BB3AD245F01260074CB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510B10B7245F3EA300AD59D0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				510B10C0245F3EEA00AD59D0 /* Buy Adjustments */,
+				510B10B8245F3EA300AD59D0 /* Buy Items List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		510B10B8245F3EA300AD59D0 /* Buy Items List */ = {
+			isa = PBXGroup;
+			children = (
+				510B10B9245F3EA300AD59D0 /* View */,
+				510B10BB245F3EA300AD59D0 /* ViewController */,
+			);
+			path = "Buy Items List";
+			sourceTree = "<group>";
+		};
+		510B10B9245F3EA300AD59D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				510B10BA245F3EA300AD59D0 /* FeatureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		510B10BB245F3EA300AD59D0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				510B10BC245F3EA300AD59D0 /* FeatureViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		510B10C0245F3EEA00AD59D0 /* Buy Adjustments */ = {
+			isa = PBXGroup;
+			children = (
+				510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */,
+			);
+			path = "Buy Adjustments";
+			sourceTree = "<group>";
+		};
 		903BB39F245F01250074CB4E = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +147,7 @@
 		903BB3AA245F01260074CB4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				510B10B7245F3EA300AD59D0 /* Scenes */,
 				903BB3E5245F06FC0074CB4E /* CoreData */,
 				903BB3D0245F04CC0074CB4E /* Library */,
 				903BB3AB245F01260074CB4E /* AppDelegate.swift */,
@@ -280,11 +329,14 @@
 			files = (
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
+				510B10BE245F3EA300AD59D0 /* FeatureViewController.swift in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
 				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
+				510B10C3245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift in Sources */,
 				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
+				510B10BD245F3EA300AD59D0 /* FeatureView.swift in Sources */,
 				903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */,
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
 				903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */,
