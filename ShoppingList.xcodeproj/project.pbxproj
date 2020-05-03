@@ -24,6 +24,11 @@
 		903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E0245F06160074CB4E /* ViewConfigurator.swift */; };
 		903BB3E4245F063F0074CB4E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E3245F063F0074CB4E /* Observable.swift */; };
 		903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E6245F08FA0074CB4E /* CoredataManager.swift */; };
+		903BB3ED245F15320074CB4E /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* ShoppingList.xcdatamodeld */; };
+		903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
+		903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
+		906FDBBE245F398E005EE332 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FDBBD245F398E005EE332 /* FeatureViewController.swift */; };
+		906FDBC0245F39A7005EE332 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FDBBF245F39A7005EE332 /* FeatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,9 @@
 		903BB3E0245F06160074CB4E /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
+		903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchResult.swift; sourceTree = "<group>"; };
+		906FDBBD245F398E005EE332 /* FeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		906FDBBF245F39A7005EE332 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		903BB3AA245F01260074CB4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				906FDBBC245F395E005EE332 /* Scenes */,
 				903BB3E5245F06FC0074CB4E /* CoreData */,
 				903BB3D0245F04CC0074CB4E /* Library */,
 				903BB3AB245F01260074CB4E /* AppDelegate.swift */,
@@ -173,8 +182,42 @@
 			isa = PBXGroup;
 			children = (
 				903BB3E6245F08FA0074CB4E /* CoredataManager.swift */,
+				903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		906FDBB7245F38C8005EE332 /* Buy Items List */ = {
+			isa = PBXGroup;
+			children = (
+				906FDBBA245F3935005EE332 /* View */,
+				906FDBB8245F38D1005EE332 /* ViewController */,
+			);
+			path = "Buy Items List";
+			sourceTree = "<group>";
+		};
+		906FDBB8245F38D1005EE332 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				906FDBBD245F398E005EE332 /* FeatureViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		906FDBBA245F3935005EE332 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				906FDBBF245F39A7005EE332 /* FeatureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		906FDBBC245F395E005EE332 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				906FDBB7245F38C8005EE332 /* Buy Items List */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
+				906FDBBE245F398E005EE332 /* FeatureViewController.swift in Sources */,
+				906FDBC0245F39A7005EE332 /* FeatureView.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
@@ -299,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				903BB3C6245F01270074CB4E /* ShoppingListTests.swift in Sources */,
+				903BB3ED245F15320074CB4E /* ShoppingList.xcdatamodeld in Sources */,
+				903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
