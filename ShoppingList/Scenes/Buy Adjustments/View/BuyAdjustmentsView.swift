@@ -115,8 +115,8 @@ extension BuyAdjustmentsView : ViewConfigurator {
 
         addStateButton.anchor(top: nil,
                               leading: nil,
-                              bottom: safeAreaLayoutGuide.bottomAnchor,
-                              trailing: nil)
+                              bottom: bottomAnchor,
+                              trailing: leadingAnchor)
     }
 
 }

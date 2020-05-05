@@ -17,10 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let controller = NewProductViewController()
         self.window = UIWindow(windowScene: windowScene)
-        let navigation = UINavigationController(rootViewController: controller)
-        window?.rootViewController = navigation
+        window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
     }
 

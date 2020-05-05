@@ -11,6 +11,7 @@
 		20079D1A245F61E000CE4E5C /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D18245F61E000CE4E5C /* NewProductView.swift */; };
 		515D8AD0245F567D0058160E /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */; };
 		515D8AD4245F585D0058160E /* BuyAdjustmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8AD3245F585D0058160E /* BuyAdjustmentsView.swift */; };
+		9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007FE752461F2F6003E0E1A /* MainTabBarController.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
 		903BB3B0245F01260074CB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AF245F01260074CB4E /* ViewController.swift */; };
@@ -28,7 +29,7 @@
 		903BB3E4245F063F0074CB4E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E3245F063F0074CB4E /* Observable.swift */; };
 		903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E6245F08FA0074CB4E /* CoredataManager.swift */; };
 		EDA22249245F3FE200D94EF0 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22242245F3FE100D94EF0 /* FeatureView.swift */; };
-		EDA2224A245F3FE200D94EF0 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */; };
+		EDA2224A245F3FE200D94EF0 /* BuyItemsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */; };
 		EDA2224D245F404700D94EF0 /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2224C245F404700D94EF0 /* TotalView.swift */; };
 		EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2224E245F407800D94EF0 /* TotalViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		515D8AD3245F585D0058160E /* BuyAdjustmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsView.swift; sourceTree = "<group>"; };
+		9007FE752461F2F6003E0E1A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		903BB3A8245F01260074CB4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903BB3AD245F01260074CB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		EDA22242245F3FE100D94EF0 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
-		EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsListController.swift; sourceTree = "<group>"; };
 		EDA2224C245F404700D94EF0 /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
 		EDA2224E245F407800D94EF0 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,22 @@
 				515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9007FE732461F2DB003E0E1A /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9007FE742461F2E5003E0E1A /* TabBarController */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		9007FE742461F2E5003E0E1A /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9007FE752461F2F6003E0E1A /* MainTabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		903BB39F245F01250074CB4E = {
@@ -254,6 +272,7 @@
 		EDA2223F245F3FE100D94EF0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9007FE732461F2DB003E0E1A /* MainTabBar */,
 				20079D14245F61E000CE4E5C /* New Product */,
 				EDA22240245F3FE100D94EF0 /* Buy Items List */,
 				515D8ACE245F567D0058160E /* Buy Adjustments */,
@@ -282,7 +301,7 @@
 		EDA22243245F3FE100D94EF0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EDA22244245F3FE100D94EF0 /* FeatureViewController.swift */,
+				EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -414,7 +433,8 @@
 			files = (
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
-				EDA2224A245F3FE200D94EF0 /* FeatureViewController.swift in Sources */,
+				9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */,
+				EDA2224A245F3FE200D94EF0 /* BuyItemsListController.swift in Sources */,
 				20079D19245F61E000CE4E5C /* NewProductViewController.swift in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */,
