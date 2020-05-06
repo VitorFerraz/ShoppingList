@@ -29,7 +29,7 @@ final class NewProductView: UIView {
         return field
     }()
 
-    private lazy var imageButton: UIButton = {
+    lazy var imageButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "gift")
         button.setImage(image, for: .normal)
@@ -118,6 +118,7 @@ extension NewProductView {
     @objc
     private func didTapCover() {
         print("clicou na imagem");
+        delegate?.didTapConver()
     }
 }
 
@@ -137,4 +138,5 @@ extension NewProductView: ViewConfigurator {
 protocol NewProductViewDelegate {
     func didTapSave()
     func didTapState()
+    func didTapConver()
 }

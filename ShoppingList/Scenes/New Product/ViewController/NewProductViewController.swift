@@ -8,8 +8,17 @@
 
 import UIKit
 
-final class NewProductViewController: UIViewController {
+final class NewProductViewController: UIViewController, CameraAlertControllerDelegate {
+    func presentFromAlert(_ viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func didSelectedImage(_ image: UIImage) {
+        customView.imageButton.setImage(image, for: .normal)
 
+    }
+    
+    let cameraController = CameraAlertController()
     private lazy var customView: NewProductView = {
         let view = NewProductView()
         view.delegate = self
@@ -18,6 +27,7 @@ final class NewProductViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraController.delegate = self
     }
 
     override func loadView() {
@@ -26,6 +36,11 @@ final class NewProductViewController: UIViewController {
 }
 
 extension NewProductViewController: NewProductViewDelegate {
+    func didTapConver() {
+        let alert = cameraController.buildAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func didTapState() {
         print("Chamar a tela do Pedro")
     }
@@ -35,3 +50,23 @@ extension NewProductViewController: NewProductViewDelegate {
         // cadastrar produto
     }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+struct NewProductViewRepresentable: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        return NewProductViewController().view!
+    }
+
+    func updateUIView(_ view: UIView, context: Context) {
+
+    }
+}
+
+@available(iOS 13.0, *)
+struct NewProductViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        NewProductViewRepresentable()
+    }
+}
+#endif
