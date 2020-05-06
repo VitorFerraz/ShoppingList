@@ -37,7 +37,7 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
 extension NewProductViewController: NewProductViewDelegate {
     func didTapConver() {
-        let alert = cameraController.buildAlert()
+        let alert = cameraController.alert
         self.present(alert, animated: true, completion: nil)
     }
     

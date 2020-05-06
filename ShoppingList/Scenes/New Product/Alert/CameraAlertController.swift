@@ -13,11 +13,11 @@ protocol CameraAlertControllerDelegate: AnyObject {
 }
 class CameraAlertController: NSObject {
     weak var delegate: CameraAlertControllerDelegate?
-    
-    func buildAlert() -> UIAlertController {
+    var alert: UIAlertController {
         let alertController = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster", preferredStyle: .actionSheet)
         setupOptions(on: alertController)
         return alertController
+        
     }
    
     private func setupOptions(on alert: UIAlertController) {
