@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 class BuyAdjustmentsView : UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let quotationLabel: UILabel = {
         let label = UILabel()
@@ -33,6 +42,8 @@ class BuyAdjustmentsView : UIView {
 
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
+        field.borderStyle = .roundedRect
+        field.textAlignment = .right
 
         return field
     }()
@@ -41,6 +52,8 @@ class BuyAdjustmentsView : UIView {
 
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
+        field.borderStyle = .roundedRect
+        field.textAlignment = .right
 
         return field
     }()
@@ -62,7 +75,7 @@ class BuyAdjustmentsView : UIView {
     }()
 
     let addStateButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
 
         button.setTitle("Adicionar estado", for: .normal)
 
@@ -72,11 +85,15 @@ class BuyAdjustmentsView : UIView {
     lazy var stackQuotation: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [ quotationLabel, quotationInput ])
 
+        stack.spacing = 16
+
         return stack
     }()
 
     lazy var stackTax: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [ taxLabel, taxInput ])
+
+        stack.spacing = 16
 
         return stack
     }()
@@ -93,30 +110,54 @@ extension BuyAdjustmentsView : ViewConfigurator {
     }
 
     func setupConstraints() {
+        quotationInput.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 100, height: 0))
+
+        taxInput.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 100, height: 0))
+
         stackQuotation.anchor(top: safeAreaLayoutGuide.topAnchor,
                               leading: safeAreaLayoutGuide.leadingAnchor,
                               bottom: nil,
-                              trailing: safeAreaLayoutGuide.trailingAnchor)
+                              trailing: safeAreaLayoutGuide.trailingAnchor,
+                              padding: .init(top: 50,
+                                             left: 16,
+                                             bottom: 0,
+                                             right: 16))
 
         stackTax.anchor(top: stackQuotation.bottomAnchor,
                         leading: safeAreaLayoutGuide.leadingAnchor,
                         bottom: nil,
-                        trailing: safeAreaLayoutGuide.trailingAnchor)
+                        trailing: safeAreaLayoutGuide.trailingAnchor,
+                        padding: .init(top: 10,
+                                       left: 16,
+                                       bottom: 0,
+                                       right: 16))
 
         sectionLabel.anchor(top: stackTax.bottomAnchor,
                             leading: safeAreaLayoutGuide.leadingAnchor,
                             bottom: nil,
-                            trailing: safeAreaLayoutGuide.trailingAnchor)
+                            trailing: safeAreaLayoutGuide.trailingAnchor,
+                            padding: .init(top: 30,
+                                           left: 0,
+                                           bottom: 30,
+                                           right: 0))
 
         statesTable.anchor(top: sectionLabel.bottomAnchor,
                            leading: safeAreaLayoutGuide.leadingAnchor,
                            bottom: addStateButton.topAnchor,
-                           trailing: safeAreaLayoutGuide.trailingAnchor)
+                           trailing: safeAreaLayoutGuide.trailingAnchor,
+                           padding: .init(top: 0,
+                                          left: 0,
+                                          bottom: 20,
+                                          right: 0))
 
         addStateButton.anchor(top: nil,
                               leading: nil,
-                              bottom: bottomAnchor,
-                              trailing: leadingAnchor)
+                              bottom: safeAreaLayoutGuide.bottomAnchor,
+                              trailing: safeAreaLayoutGuide.trailingAnchor,
+                              padding: .init(top: 0,
+                                             left: 0,
+                                             bottom: 0,
+                                             right: 16))
     }
 
 }
