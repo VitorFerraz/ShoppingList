@@ -1,5 +1,5 @@
 //
-//  FeatureViewController.swift
+//  BuyItemsListController.swift
 //  ShoppingList
 //
 //  Created by vitor.ferrazvarela on 03/05/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeatureViewController: UIViewController {
+class BuyItemsListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
