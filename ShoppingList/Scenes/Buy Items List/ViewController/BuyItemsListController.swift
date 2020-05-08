@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BuyItemsListController: UIViewController {
+
+class ItemListCell: GenericCell<Product> {
+    
+}
+class BuyItemsListController: GenericTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
