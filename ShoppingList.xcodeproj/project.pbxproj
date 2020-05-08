@@ -28,6 +28,9 @@
 		903BB3E1245F06160074CB4E /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E0245F06160074CB4E /* ViewConfigurator.swift */; };
 		903BB3E4245F063F0074CB4E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E3245F063F0074CB4E /* Observable.swift */; };
 		903BB3E7245F08FA0074CB4E /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3E6245F08FA0074CB4E /* CoredataManager.swift */; };
+		903BB3ED245F15320074CB4E /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* ShoppingList.xcdatamodeld */; };
+		903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
+		903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
 		90B60B91246333A0000462A0 /* CameraAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B60B90246333A0000462A0 /* CameraAlertController.swift */; };
 		EDA22249245F3FE200D94EF0 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22242245F3FE100D94EF0 /* FeatureView.swift */; };
 		EDA2224A245F3FE200D94EF0 /* BuyItemsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */; };
@@ -72,6 +75,7 @@
 		903BB3E0245F06160074CB4E /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
+		903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchResult.swift; sourceTree = "<group>"; };
 		90B60B90246333A0000462A0 /* CameraAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertController.swift; sourceTree = "<group>"; };
 		EDA22242245F3FE100D94EF0 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsListController.swift; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				903BB3E6245F08FA0074CB4E /* CoredataManager.swift */,
+				903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -442,7 +447,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
 				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
+				906FDBBE245F398E005EE332 /* FeatureViewController.swift in Sources */,
+				906FDBC0245F39A7005EE332 /* FeatureView.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
 				9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */,
 				90B60B91246333A0000462A0 /* CameraAlertController.swift in Sources */,
@@ -473,6 +481,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				903BB3C6245F01270074CB4E /* ShoppingListTests.swift in Sources */,
+				903BB3ED245F15320074CB4E /* ShoppingList.xcdatamodeld in Sources */,
+				903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -644,7 +654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
