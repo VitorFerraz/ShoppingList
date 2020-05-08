@@ -21,8 +21,9 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
     }
     lazy var emptyMessageLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = .preferredFont(forTextStyle: .subheadline)
         label.text = emptyTextMessage
+        label.textAlignment = .center
         return label
     }()
     var emptyTextMessage = "Sua lista está vazia!"

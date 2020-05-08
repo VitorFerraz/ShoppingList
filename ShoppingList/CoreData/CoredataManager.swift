@@ -38,8 +38,8 @@ class CoredataManager {
         try context.save()
     }
     
-    func fetchObjects() -> [Teste] {
-        let items = try? context.fetchObjects(Teste.self)
+    func fetchObjects() -> [Product] {
+        let items = try? context.fetchObjects(Product.self)
         return items ?? []
     }
     

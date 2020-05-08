@@ -30,6 +30,7 @@
 		903BB3ED245F15320074CB4E /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* ShoppingList.xcdatamodeld */; };
 		903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
 		903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
+		904A7A0A2465D3AC00C0E1D4 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A7A092465D3AC00C0E1D4 /* ProductCell.swift */; };
 		90A28F602465C609000DDA58 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */; };
 		90A28F622465C646000DDA58 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F612465C646000DDA58 /* GenericCell.swift */; };
 		90B60B91246333A0000462A0 /* CameraAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B60B90246333A0000462A0 /* CameraAlertController.swift */; };
@@ -75,9 +76,10 @@
 		903BB3E0245F06160074CB4E /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
+		903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchResult.swift; sourceTree = "<group>"; };
+		904A7A092465D3AC00C0E1D4 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		90A28F612465C646000DDA58 /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
-		903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchResult.swift; sourceTree = "<group>"; };
 		90B60B90246333A0000462A0 /* CameraAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertController.swift; sourceTree = "<group>"; };
 		EDA22242245F3FE100D94EF0 /* BuyItemsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsListView.swift; sourceTree = "<group>"; };
 		EDA22244245F3FE100D94EF0 /* BuyItemsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsListController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA22242245F3FE100D94EF0 /* BuyItemsListView.swift */,
+				904A7A092465D3AC00C0E1D4 /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,9 +454,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
-				903BB3B0245F01260074CB4E /* ViewController.swift in Sources */,
-				906FDBBE245F398E005EE332 /* FeatureViewController.swift in Sources */,
-				906FDBC0245F39A7005EE332 /* FeatureView.swift in Sources */,
 				903BB3B6245F01260074CB4E /* ShoppingList.xcdatamodeld in Sources */,
 				90A28F622465C646000DDA58 /* GenericCell.swift in Sources */,
 				9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */,
@@ -470,6 +470,7 @@
 				903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */,
 				EDA22249245F3FE200D94EF0 /* BuyItemsListView.swift in Sources */,
 				EDA2224D245F404700D94EF0 /* TotalView.swift in Sources */,
+				904A7A0A2465D3AC00C0E1D4 /* ProductCell.swift in Sources */,
 				903BB3DC245F05BD0074CB4E /* String+Utils.swift in Sources */,
 				20079D1A245F61E000CE4E5C /* NewProductView.swift in Sources */,
 				903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */,
