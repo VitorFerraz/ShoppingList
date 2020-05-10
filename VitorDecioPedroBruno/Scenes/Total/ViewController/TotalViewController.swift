@@ -13,14 +13,19 @@ class TotalViewController: UIViewController {
     
     // MARK: - Properties
     let totalView = TotalView()
+    let viewModel = TotalViewModel()
 
     // MARK: - Superclass Overwriting Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        updateTotals()
     }
     
-    
+    func updateTotals() {
+        totalView.lbTotalDollarValue.text = viewModel.getTotalDollar()
+        totalView.lbTotalReaisValue.text = viewModel.getTotalReais()
+    }
 }
 
 // MARK: - Extensions
