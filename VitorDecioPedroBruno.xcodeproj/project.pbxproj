@@ -17,7 +17,6 @@
 		903BB3B6245F01260074CB4E /* VitorDecioPedroBruno.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* VitorDecioPedroBruno.xcdatamodeld */; };
 		903BB3B8245F01270074CB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B7245F01270074CB4E /* Assets.xcassets */; };
 		903BB3BB245F01270074CB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903BB3B9245F01270074CB4E /* LaunchScreen.storyboard */; };
-		903BB3C6245F01270074CB4E /* ShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3C5245F01270074CB4E /* ShoppingListTests.swift */; };
 		903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */; };
 		903BB3D6245F05160074CB4E /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D5245F05160074CB4E /* Double+Formatter.swift */; };
 		903BB3D8245F05340074CB4E /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3D7245F05340074CB4E /* NumberFormatter+Currency.swift */; };
@@ -30,6 +29,7 @@
 		903BB3ED245F15320074CB4E /* VitorDecioPedroBruno.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3B4245F01260074CB4E /* VitorDecioPedroBruno.xcdatamodeld */; };
 		903BB3F5245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
 		903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */; };
+		9044D3B124687C4C00B3E94D /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D3B024687C4C00B3E94D /* CoreDataTests.swift */; };
 		904A7A0A2465D3AC00C0E1D4 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A7A092465D3AC00C0E1D4 /* ProductCell.swift */; };
 		90A28F602465C609000DDA58 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */; };
 		90A28F622465C646000DDA58 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F612465C646000DDA58 /* GenericCell.swift */; };
@@ -65,7 +65,6 @@
 		903BB3BA245F01270074CB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		903BB3BC245F01270074CB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		903BB3C1245F01270074CB4E /* VitorDecioPedroBrunoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitorDecioPedroBrunoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		903BB3C5245F01270074CB4E /* ShoppingListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTests.swift; sourceTree = "<group>"; };
 		903BB3C7245F01270074CB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		903BB3D5245F05160074CB4E /* Double+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		903BB3E3245F063F0074CB4E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		903BB3E6245F08FA0074CB4E /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		903BB3F4245F30DF0074CB4E /* NSFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchResult.swift; sourceTree = "<group>"; };
+		9044D3B024687C4C00B3E94D /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		904A7A092465D3AC00C0E1D4 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		90A28F612465C646000DDA58 /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		903BB3C4245F01270074CB4E /* VitorDecioPedroBrunoTests */ = {
 			isa = PBXGroup;
 			children = (
-				903BB3C5245F01270074CB4E /* ShoppingListTests.swift */,
 				903BB3C7245F01270074CB4E /* Info.plist */,
+				9044D3B024687C4C00B3E94D /* CoreDataTests.swift */,
 			);
 			path = VitorDecioPedroBrunoTests;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903BB3C6245F01270074CB4E /* ShoppingListTests.swift in Sources */,
+				9044D3B124687C4C00B3E94D /* CoreDataTests.swift in Sources */,
 				903BB3ED245F15320074CB4E /* VitorDecioPedroBruno.xcdatamodeld in Sources */,
 				903BB3F6245F30DF0074CB4E /* NSFetchResult.swift in Sources */,
 			);
@@ -671,14 +671,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2K5XG954;
-				INFOPLIST_FILE = ShoppingListTests/Info.plist;
+				INFOPLIST_FILE = VitorDecioPedroBrunoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingListTests;
+				PRODUCT_BUNDLE_IDENTIFIER = VitorDecioPedroBruno.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,14 +693,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2K5XG954;
-				INFOPLIST_FILE = ShoppingListTests/Info.plist;
+				INFOPLIST_FILE = VitorDecioPedroBrunoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingListTests;
+				PRODUCT_BUNDLE_IDENTIFIER = VitorDecioPedroBruno.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
