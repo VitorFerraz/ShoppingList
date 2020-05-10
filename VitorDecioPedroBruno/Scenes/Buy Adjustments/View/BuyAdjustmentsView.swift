@@ -40,6 +40,7 @@ class BuyAdjustmentsView : UIView {
     let quotationInput: UITextField = {
         let field = UITextField()
 
+        field.accessibilityIdentifier = "quote"
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
         field.borderStyle = .roundedRect
@@ -50,6 +51,7 @@ class BuyAdjustmentsView : UIView {
     let taxInput: UITextField = {
         let field = UITextField()
 
+        field.accessibilityIdentifier = "tax"
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
         field.borderStyle = .roundedRect
@@ -156,7 +158,7 @@ extension BuyAdjustmentsView : ViewConfigurator {
                               trailing: safeAreaLayoutGuide.trailingAnchor,
                               padding: .init(top: 0,
                                              left: 0,
-                                             bottom: 0,
+                                             bottom: 20,
                                              right: 16))
     }
 

@@ -16,13 +16,26 @@ class BuyAdjustmentsViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
-    }
 
+        hideKeyboardWhenTappedAround()
+    }
 }
 
 extension BuyAdjustmentsViewController : ViewConfigurator {
 
     func addViewHierarchy() {
+        let userPref = UserDefaults()
+
+        if let value = userPref.string(forKey: adjustmentView.quotationInput.accessibilityIdentifier!) {
+            adjustmentView.quotationInput.text = value
+        }
+
+        if let value = userPref.string(forKey: adjustmentView.taxInput.accessibilityIdentifier!) {
+            adjustmentView.taxInput.text = value
+        }
+
+        adjustmentView.quotationInput.delegate = self
+        adjustmentView.taxInput.delegate = self
         adjustmentView.statesTable.delegate = self
 
         view.addSubview(adjustmentView)
@@ -34,13 +47,23 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
             left: 0,
             bottom: 0,
             right: 0
-        ))
+            ))
     }
-    
+
 }
 
 extension BuyAdjustmentsViewController : UITableViewDelegate {
 
+}
+
+extension BuyAdjustmentsViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let userPref = UserDefaults()
+
+        userPref.set(textField.text, forKey: textField.accessibilityIdentifier!)
+
+        userPref.synchronize()
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG
@@ -62,3 +85,4 @@ struct BuyAdjustmentsViewController_Preview: PreviewProvider {
     }
 }
 #endif
+

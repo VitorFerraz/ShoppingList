@@ -11,6 +11,7 @@
 		20079D1A245F61E000CE4E5C /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20079D18245F61E000CE4E5C /* NewProductView.swift */; };
 		515D8AD0245F567D0058160E /* BuyAdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */; };
 		515D8AD4245F585D0058160E /* BuyAdjustmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D8AD3245F585D0058160E /* BuyAdjustmentsView.swift */; };
+		51EC037024687976007195DD /* UIViewController+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EC036F24687976007195DD /* UIViewController+KeyboardDismiss.swift */; };
 		9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007FE752461F2F6003E0E1A /* MainTabBarController.swift */; };
 		903BB3AC245F01260074CB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AB245F01260074CB4E /* AppDelegate.swift */; };
 		903BB3AE245F01260074CB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BB3AD245F01260074CB4E /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		510B10C2245F3F3100AD59D0 /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		515D8AD3245F585D0058160E /* BuyAdjustmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsView.swift; sourceTree = "<group>"; };
+		51EC036F24687976007195DD /* UIViewController+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardDismiss.swift"; sourceTree = "<group>"; };
 		9007FE752461F2F6003E0E1A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		903BB3A8245F01260074CB4E /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				903BB3E3245F063F0074CB4E /* Observable.swift */,
 				90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */,
 				90A28F612465C646000DDA58 /* GenericCell.swift */,
+				51EC036F24687976007195DD /* UIViewController+KeyboardDismiss.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				9007FE762461F2F6003E0E1A /* MainTabBarController.swift in Sources */,
 				90B60B91246333A0000462A0 /* CameraAlertController.swift in Sources */,
 				EDA2224A245F3FE200D94EF0 /* BuyItemsListController.swift in Sources */,
+				51EC037024687976007195DD /* UIViewController+KeyboardDismiss.swift in Sources */,
 				20079D19245F61E000CE4E5C /* NewProductViewController.swift in Sources */,
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */,
