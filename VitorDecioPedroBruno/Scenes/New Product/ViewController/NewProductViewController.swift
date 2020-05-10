@@ -14,6 +14,8 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
     private var states = [State]()
     private var selectedState: State?
+    private var isEditingProduct = false
+    private var editedProduct: Product? = nil
 
     func presentFromAlert(_ viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
@@ -21,7 +23,13 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
     
     func didSelectedImage(_ image: UIImage) {
         customView.imageButton.setImage(image, for: .normal)
+    }
 
+    func setEditingState(_ state: Bool, product: Product? = nil) {
+        isEditingProduct = state
+        selectedState = product?.state
+        editedProduct = product
+        customView.set(product: product)
     }
     
     let cameraController = CameraAlertController()
@@ -33,7 +41,6 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        coredataManager.createFakeData()
         fetchStates()
         cameraController.delegate = self
     }
@@ -53,6 +60,10 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 }
 
 extension NewProductViewController: NewProductViewDelegate {
+    func didTapAddState() {
+        navigationController?.tabBarController?.selectedIndex = 1
+    }
+
     func showErrorAlert() {
         let alert = UIAlertController(title: "Erro ao salvar", message: "Preencha todos os dados corretamente para continuar", preferredStyle: .alert)
 
@@ -82,10 +93,6 @@ extension NewProductViewController: NewProductViewDelegate {
         let alert = cameraController.alert
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func didTapState() {
-        print("Chamar a tela do Pedro")
-    }
 
     func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double) {
         guard let state = selectedState else {
@@ -93,14 +100,24 @@ extension NewProductViewController: NewProductViewDelegate {
             return
         }
         do {
-            try coredataManager.newProduct(name: name,
-                                           creditCardBuy: creditCardBuy,
-                                           photo: photo,
-                                           price: price,
-                                           state: state)
+            if isEditingProduct {
+                editedProduct?.name = name
+                editedProduct?.creditCardBuy = creditCardBuy
+                editedProduct?.photo = photo.pngData()
+                editedProduct?.price = price
+                editedProduct?.state = selectedState
+                try coredataManager.save()
+
+            } else {
+                try coredataManager.newProduct(name: name,
+                                               creditCardBuy: creditCardBuy,
+                                               photo: photo,
+                                               price: price,
+                                               state: state)
+            }
             navigationController?.popViewController(animated: true)
         } catch {
-            print("error trying to save new Product")
+            print(error.localizedDescription)
         }
     }
 }

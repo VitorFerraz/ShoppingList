@@ -70,21 +70,3 @@ class CoredataManager {
     }
     
 }
-
-extension CoredataManager {
-    private func createStates() {
-        try? newState(name: "XPTO", tax: 10.0)
-        try? newState(name: "XPTO2", tax: 12.0)
-        
-    }
-    func createFakeData() {
-        try? deleteAll(item: State.self)
-        try? deleteAll(item: Product.self)
-
-        createStates()
-        let states = try? fetchStates()
-        states?.forEach({ (state) in
-            try? newProduct(name: "Teste", creditCardBuy: true, photo: #imageLiteral(resourceName: "gift"), price: 10.0, state: state)
-        })
-    }
-}

@@ -81,6 +81,7 @@ final class NewProductView: UIView {
 
     private let plusButton: UIButton = {
         let button = UIButton(type: .contactAdd)
+        button.addTarget(self, action: #selector(didTapAddState), for: .touchUpInside)
         return button
     }()
 
@@ -167,6 +168,22 @@ extension NewProductView {
         endEditing(true)
         pickerState.selectRow(delegate?.getSelectedPickerIndex() ?? 0, inComponent: 0, animated: false)
     }
+
+    @objc
+    private func didTapAddState() {
+        delegate?.didTapAddState()
+    }
+
+    func set(product: Product?) {
+        guard let product = product else { return }
+        nameField.text = product.name
+        purchaseStateField.text = product.state?.name
+        cashField.text = "\(product.price)"
+        cardSwitch.setOn(product.creditCardBuy, animated: false)
+        if let imageData = product.photo {
+            imageButton.setImage(UIImage(data: imageData), for: .normal)
+        }
+    }
 }
 
 extension NewProductView: ViewConfigurator {
@@ -198,11 +215,11 @@ extension NewProductView: UIPickerViewDelegate, UIPickerViewDataSource, UITextFi
 
 protocol NewProductViewDelegate {
     func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double)
-    func didTapState()
     func didTapCover()
     func pickerNumberOfRows() -> Int
     func pickerTitle(at index: Int) -> String?
     func didSelectPickerState(at index: Int)
     func getSelectedPickerIndex() -> Int
     func showErrorAlert()
+    func didTapAddState()
 }
