@@ -18,9 +18,6 @@ class BuyAdjustmentsViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
-
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
         hideKeyboardWhenTappedAround()
     }
 
