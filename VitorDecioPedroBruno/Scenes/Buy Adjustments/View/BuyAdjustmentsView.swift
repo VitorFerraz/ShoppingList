@@ -70,8 +70,20 @@ class BuyAdjustmentsView : UIView {
         return label
     }()
 
+    let emptyMessageLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.text = "Lista de estados vazia."
+        label.textAlignment = .center
+
+        return label
+    }()
+
     lazy var statesTable: UITableView = {
         let table = UITableView()
+
+        table.tableFooterView = UIView()
 
         return table
     }()
