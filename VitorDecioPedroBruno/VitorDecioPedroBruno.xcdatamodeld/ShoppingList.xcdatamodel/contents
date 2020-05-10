@@ -4,17 +4,16 @@
         <attribute name="creditCardBuy" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="photo" attributeType="Binary"/>
-        <attribute name="price" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="products" inverseEntity="State"/>
     </entity>
     <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
-        <attribute name="dolar" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="iofTax" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="tax" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="products" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="state" inverseEntity="Product"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-63" positionY="-9" width="128" height="118"/>
-        <element name="State" positionX="153.03515625" positionY="-20.75390625" width="128" height="103"/>
+        <element name="Product" positionX="-128.03515625" positionY="-51.96875" width="128" height="118"/>
+        <element name="State" positionX="153.03515625" positionY="-20.75390625" width="128" height="88"/>
     </elements>
 </model>
