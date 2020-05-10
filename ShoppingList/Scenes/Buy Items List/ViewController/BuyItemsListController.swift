@@ -8,23 +8,25 @@
 
 import UIKit
 
-class BuyItemsListController: UIViewController {
-
+class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
+    var coredataManager = CoredataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let procut = Product(context: coredataManager.context)
+        procut.name = "teste"
+        try? coredataManager.save()
+        items = [procut]
+        setupNavigation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupNavigation() {
+        title = "Lista de Compras"
+        let addProductButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddProduct))
+        navigationItem.rightBarButtonItem = addProductButton
     }
-    */
-
+    
+    @objc private func showAddProduct() {
+        let newProductVc = NewProductViewController()
+        navigationController?.show(newProductVc, sender: nil)
+    }
 }

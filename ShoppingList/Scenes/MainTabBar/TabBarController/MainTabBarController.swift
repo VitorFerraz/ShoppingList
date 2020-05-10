@@ -14,9 +14,9 @@ struct TabController {
 }
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     var tabControllers: [TabController] {
-        let buyItemsNavController = templateNavController(image: #imageLiteral(resourceName: "business-bag-7"),rootViewController: BuyItemsListController())
-        let buyAdjustmentsNavController = templateNavController(image: #imageLiteral(resourceName: "gear-7"),rootViewController: BuyAdjustmentsViewController())
-        let totalNavController = templateNavController(image: #imageLiteral(resourceName: "business-bag-7"),rootViewController: TotalViewController())
+        let buyItemsNavController = templateNavController(image: #imageLiteral(resourceName: "suitcase-icon"),rootViewController: BuyItemsListController())
+        let buyAdjustmentsNavController = templateNavController(image: #imageLiteral(resourceName: "gear-icon"),rootViewController: BuyAdjustmentsViewController())
+        let totalNavController = templateNavController(image: #imageLiteral(resourceName: "suitcase-icon"),rootViewController: TotalViewController())
 
         return [.init(title: "Compras", controller: buyItemsNavController),
                 .init(title: "Ajustes", controller: buyAdjustmentsNavController),
@@ -36,10 +36,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     func setupViewControllers() {
         viewControllers = tabControllers.map({$0.controller})
-        // modify tab bar item insets
-        tabBar.items?.forEach({ (item) in
-            item.imageInsets = UIEdgeInsets.init(top: 4, left: 0, bottom: -4, right: 0)
-        })
     }
     
     func setupTabBarItemsNames() {
