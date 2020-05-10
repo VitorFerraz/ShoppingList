@@ -25,10 +25,11 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
         customView.imageButton.setImage(image, for: .normal)
     }
 
-    func setEditingState(_ state: Bool, product: Product? = nil) {
-        isEditingProduct = state
+    func setEditingState(product: Product? = nil) {
+        isEditingProduct = true
         selectedState = product?.state
         editedProduct = product
+        title = "Editar Produto"
         customView.set(product: product)
     }
     
@@ -43,6 +44,9 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
         super.viewDidLoad()
         fetchStates()
         cameraController.delegate = self
+        if !isEditingProduct {
+            title = "Cadastrar Produto"
+        }
     }
 
     override func loadView() {

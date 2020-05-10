@@ -180,6 +180,7 @@ extension NewProductView {
         purchaseStateField.text = product.state?.name
         cashField.text = "\(product.price)"
         cardSwitch.setOn(product.creditCardBuy, animated: false)
+        saveButton.setTitle("Atualizar", for: .normal)
         if let imageData = product.photo {
             imageButton.setImage(UIImage(data: imageData), for: .normal)
         }

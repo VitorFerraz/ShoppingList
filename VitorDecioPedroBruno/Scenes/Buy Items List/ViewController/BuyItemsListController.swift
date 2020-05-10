@@ -25,7 +25,7 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = viewModel.products[indexPath.row]
         let newProductVc = NewProductViewController()
-        newProductVc.setEditingState(true, product: product)
+        newProductVc.setEditingState(product: product)
         navigationController?.show(newProductVc, sender: nil)
     }
     
