@@ -38,9 +38,53 @@ class CoredataManager {
         try context.save()
     }
     
-    func fetchObjects() -> [Product] {
-        let items = try? context.fetchObjects(Product.self)
-        return items ?? []
+    func fetchProducts() throws -> [Product] {
+        let items = try context.fetchObjects(Product.self)
+        return items
     }
     
+    func fetchStates() throws -> [State] {
+        let items = try context.fetchObjects(State.self)
+        return items
+    }
+    
+    func newProdut(name: String,
+                   creditCardBuy: Bool,
+                   photo: UIImage,
+                   price: Double,
+                   state: State) throws {
+        let product = Product(context: context)
+        product.name = name
+        product.creditCardBuy = creditCardBuy
+        product.photo = photo.pngData()
+        product.price = price
+        product.state = state
+        try save()
+    }
+    
+    func newState(name: String, tax: Double) throws {
+        let state = State(context: context)
+        state.name = name
+        state.tax = tax
+        try save()
+    }
+    
+}
+
+extension CoredataManager {
+    private func createStates() {
+        try? newState(name: "XPTO", tax: 10.0)
+        try? newState(name: "XPTO2", tax: 12.0)
+        
+    }
+    func createFakeData() {
+        try? deleteAll(item: State.self)
+        try? deleteAll(item: Product.self)
+
+        createStates()
+        let states = try? fetchStates()
+        states?.forEach({ (state) in
+            try? newProdut(name: "Teste", creditCardBuy: true, photo: #imageLiteral(resourceName: "gift"), price: 10.0, state: state)
+        })
+    }
 }
