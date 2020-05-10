@@ -55,8 +55,10 @@ class BuyAdjustmentsViewController: UIViewController {
     }
 
     func openStateModal(state: State?) {
+        let modalTitle = state == nil ? "Adicionar estado" : "Editar estado"
+        let modalConfirm = state == nil ? "Cadastrar" : "Atualizar"
         let modal = UIAlertController(
-            title: "Adicionar estado",
+            title: modalTitle,
             message: nil,
             preferredStyle: .alert)
 
@@ -78,7 +80,7 @@ class BuyAdjustmentsViewController: UIViewController {
             //modal.dismiss(animated: true, completion: nil)
         }))
 
-        modal.addAction(UIAlertAction(title: "Cadastrar", style: .destructive, handler: { (act) in
+        modal.addAction(UIAlertAction(title: modalConfirm, style: .destructive, handler: { (act) in
             let stateName = modal.textFields![0].text!
             let taxValue = modal.textFields![1].text!
 
