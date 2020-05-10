@@ -140,6 +140,7 @@ extension NewProductView {
     private func didTapSave() {
         guard
             let name = nameField.text,
+            nameField.text != "",
             let image = imageButton.imageView?.image,
             let cashText = cashField.text,
             let price = Double(cashText) else {

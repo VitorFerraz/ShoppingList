@@ -16,12 +16,14 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
     private var selectedState: State?
     private var isEditingProduct = false
     private var editedProduct: Product? = nil
+    private var didSelectImage: Bool = false
 
     func presentFromAlert(_ viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
     }
     
     func didSelectedImage(_ image: UIImage) {
+        didSelectImage = true
         customView.imageButton.setImage(image, for: .normal)
     }
 
@@ -65,7 +67,8 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
 extension NewProductViewController: NewProductViewDelegate {
     func didTapAddState() {
-        navigationController?.tabBarController?.selectedIndex = 1
+        let controller = BuyAdjustmentsViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     func showErrorAlert() {
@@ -99,7 +102,9 @@ extension NewProductViewController: NewProductViewDelegate {
     }
 
     func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double) {
-        guard let state = selectedState else {
+        guard
+            didSelectImage,
+            let state = selectedState else {
             showErrorAlert()
             return
         }
