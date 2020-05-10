@@ -9,8 +9,12 @@
 import Foundation
 
 extension Double {
-    var currencyFormat: String {
-        return NumberFormatter.currencyFormatter.string(from: NSNumber(value: self)) ?? ""
+    var dollarCurrencyFormat: String {
+        return NumberFormatter.createFormatter(with: .enUS).string(from: NSNumber(value: self)) ?? ""
+
+    }
+    var realCurrencyFormat: String {
+        return NumberFormatter.createFormatter(with: .ptBR).string(from: NSNumber(value: self)) ?? ""
     }
 
     var percentFormat: String {

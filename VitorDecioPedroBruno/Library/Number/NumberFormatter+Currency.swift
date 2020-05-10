@@ -10,6 +10,16 @@ import Foundation
 
 enum CurrencySymbol: String {
     case ptBR = "R$"
+    case enUS = "U$"
+    
+    var locale: Locale {
+        switch self {
+        case .enUS:
+            return Locale(identifier: "pt_BR")
+        case .ptBR:
+            return Locale(identifier: "en_US")
+        }
+    }
 }
 
 extension NumberFormatter {
@@ -17,21 +27,20 @@ extension NumberFormatter {
         self.init()
         self.numberStyle = numberStyle
     }
-
-    static var currencyFormatter: NumberFormatter {
+    static func createFormatter(with currencySymbol: CurrencySymbol) -> NumberFormatter {
         let formatter = NumberFormatter(numberStyle: .currency)
-        if #available(iOS 12.0, *) {
-            formatter.currencySymbol = CurrencySymbol.ptBR.rawValue
-        } else {
-            formatter.currencySymbol = CurrencySymbol.ptBR.rawValue + " "
-        }
-        formatter.allowsFloats = true
-        formatter.decimalSeparator = ","
-        formatter.groupingSeparator = "."
-        formatter.minimumIntegerDigits = 1
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        formatter.locale = Locale(identifier: "pt_BR")
-        return formatter
+            if #available(iOS 12.0, *) {
+                formatter.currencySymbol = currencySymbol.rawValue
+            } else {
+                formatter.currencySymbol = currencySymbol.rawValue + " "
+            }
+            formatter.allowsFloats = true
+            formatter.decimalSeparator = ","
+            formatter.groupingSeparator = "."
+            formatter.minimumIntegerDigits = 1
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            formatter.locale = currencySymbol.locale
+            return formatter
     }
 }
