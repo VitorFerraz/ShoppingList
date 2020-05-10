@@ -57,14 +57,14 @@
 		515D8ACF245F567D0058160E /* BuyAdjustmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsViewController.swift; sourceTree = "<group>"; };
 		515D8AD3245F585D0058160E /* BuyAdjustmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAdjustmentsView.swift; sourceTree = "<group>"; };
 		9007FE752461F2F6003E0E1A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		903BB3A8245F01260074CB4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		903BB3A8245F01260074CB4E /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3AB245F01260074CB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903BB3AD245F01260074CB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		903BB3B5245F01260074CB4E /* ShoppingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingList.xcdatamodel; sourceTree = "<group>"; };
 		903BB3B7245F01270074CB4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		903BB3BA245F01270074CB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		903BB3BC245F01270074CB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		903BB3C1245F01270074CB4E /* ShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		903BB3C1245F01270074CB4E /* VitorDecioPedroBrunoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitorDecioPedroBrunoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		903BB3C5245F01270074CB4E /* ShoppingListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTests.swift; sourceTree = "<group>"; };
 		903BB3C7245F01270074CB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		903BB3D1245F04DF0074CB4E /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 		903BB3A9245F01260074CB4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				903BB3A8245F01260074CB4E /* ShoppingList.app */,
-				903BB3C1245F01270074CB4E /* ShoppingListTests.xctest */,
+				903BB3A8245F01260074CB4E /* ComprasUSA.app */,
+				903BB3C1245F01270074CB4E /* VitorDecioPedroBrunoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,9 +356,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		903BB3A7245F01260074CB4E /* ShoppingList */ = {
+		903BB3A7245F01260074CB4E /* VitorDecioPedroBruno */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 903BB3CA245F01270074CB4E /* Build configuration list for PBXNativeTarget "ShoppingList" */;
+			buildConfigurationList = 903BB3CA245F01270074CB4E /* Build configuration list for PBXNativeTarget "VitorDecioPedroBruno" */;
 			buildPhases = (
 				903BB3A4245F01260074CB4E /* Sources */,
 				903BB3A5245F01260074CB4E /* Frameworks */,
@@ -368,14 +368,14 @@
 			);
 			dependencies = (
 			);
-			name = ShoppingList;
+			name = VitorDecioPedroBruno;
 			productName = ShoppingList;
-			productReference = 903BB3A8245F01260074CB4E /* ShoppingList.app */;
+			productReference = 903BB3A8245F01260074CB4E /* ComprasUSA.app */;
 			productType = "com.apple.product-type.application";
 		};
-		903BB3C0245F01270074CB4E /* ShoppingListTests */ = {
+		903BB3C0245F01270074CB4E /* VitorDecioPedroBrunoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 903BB3CD245F01270074CB4E /* Build configuration list for PBXNativeTarget "ShoppingListTests" */;
+			buildConfigurationList = 903BB3CD245F01270074CB4E /* Build configuration list for PBXNativeTarget "VitorDecioPedroBrunoTests" */;
 			buildPhases = (
 				903BB3BD245F01270074CB4E /* Sources */,
 				903BB3BE245F01270074CB4E /* Frameworks */,
@@ -386,9 +386,9 @@
 			dependencies = (
 				903BB3C3245F01270074CB4E /* PBXTargetDependency */,
 			);
-			name = ShoppingListTests;
+			name = VitorDecioPedroBrunoTests;
 			productName = ShoppingListTests;
-			productReference = 903BB3C1245F01270074CB4E /* ShoppingListTests.xctest */;
+			productReference = 903BB3C1245F01270074CB4E /* VitorDecioPedroBrunoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -410,7 +410,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 903BB3A3245F01250074CB4E /* Build configuration list for PBXProject "ShoppingList" */;
+			buildConfigurationList = 903BB3A3245F01250074CB4E /* Build configuration list for PBXProject "VitorDecioPedroBruno" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -423,8 +423,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				903BB3A7245F01260074CB4E /* ShoppingList */,
-				903BB3C0245F01270074CB4E /* ShoppingListTests */,
+				903BB3A7245F01260074CB4E /* VitorDecioPedroBruno */,
+				903BB3C0245F01270074CB4E /* VitorDecioPedroBrunoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -497,7 +497,7 @@
 /* Begin PBXTargetDependency section */
 		903BB3C3245F01270074CB4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 903BB3A7245F01260074CB4E /* ShoppingList */;
+			target = 903BB3A7245F01260074CB4E /* VitorDecioPedroBruno */;
 			targetProxy = 903BB3C2245F01270074CB4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -640,7 +640,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ComprasUSA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -658,7 +658,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vitor.ShoppingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ComprasUSA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -682,7 +682,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingList.app/ShoppingList";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComprasUSA.app/ComprasUSA";
 			};
 			name = Debug;
 		};
@@ -704,14 +704,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingList.app/ShoppingList";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComprasUSA.app/ComprasUSA";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		903BB3A3245F01250074CB4E /* Build configuration list for PBXProject "ShoppingList" */ = {
+		903BB3A3245F01250074CB4E /* Build configuration list for PBXProject "VitorDecioPedroBruno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				903BB3C8245F01270074CB4E /* Debug */,
@@ -720,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		903BB3CA245F01270074CB4E /* Build configuration list for PBXNativeTarget "ShoppingList" */ = {
+		903BB3CA245F01270074CB4E /* Build configuration list for PBXNativeTarget "VitorDecioPedroBruno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				903BB3CB245F01270074CB4E /* Debug */,
@@ -729,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		903BB3CD245F01270074CB4E /* Build configuration list for PBXNativeTarget "ShoppingListTests" */ = {
+		903BB3CD245F01270074CB4E /* Build configuration list for PBXNativeTarget "VitorDecioPedroBrunoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				903BB3CE245F01270074CB4E /* Debug */,

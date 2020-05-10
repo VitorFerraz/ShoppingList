@@ -9,7 +9,7 @@
 import XCTest
 import CoreData
 
-@testable import ShoppingList
+@testable import ComprasUSA
 
 class ShoppingListTests: XCTestCase {
     var manager: CoredataManager!
