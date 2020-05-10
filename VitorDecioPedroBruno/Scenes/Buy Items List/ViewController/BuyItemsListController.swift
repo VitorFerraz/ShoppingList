@@ -9,10 +9,23 @@
 import UIKit
 
 class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
+    
+    let viewModel = BuyItemsListViewModel()
     var coredataManager = CoredataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        items = viewModel.getBuyItems()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = viewModel.products[indexPath.row]
+        let newProductVc = NewProductViewController()
+        navigationController?.show(newProductVc, sender: nil)
     }
     
     private func setupNavigation() {
@@ -25,4 +38,5 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         let newProductVc = NewProductViewController()
         navigationController?.show(newProductVc, sender: nil)
     }
+    
 }
