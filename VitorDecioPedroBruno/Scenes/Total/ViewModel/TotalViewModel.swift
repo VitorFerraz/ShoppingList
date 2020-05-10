@@ -36,7 +36,7 @@ class TotalViewModel {
         for product in products {
             var productTotal = product.price
             for state in states {
-                if (product.state == state) { productTotal += (productTotal * state.tax) }
+                if (product.state == state) { productTotal += ((productTotal * state.tax)/100) }
             }
             productTotal = productTotal * DOLLAR_PRICE
             if (product.creditCardBuy) { productTotal += ((productTotal * IOF)/100) }
