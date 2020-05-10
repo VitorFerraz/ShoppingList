@@ -8,6 +8,30 @@
 
 import UIKit
 
+enum Keys: String {
+    case dollar
+    case tax
+    case sbDollar
+    case sbTax
+}
+
+struct SettingsManager {
+    static let shared = SettingsManager()
+    private init() {}
+    var dollarValue: Double {
+        return UserDefaults.standard.double(forKey: Keys.sbDollar.rawValue)
+    }
+    
+    var taxValue: Double {
+         return UserDefaults.standard.double(forKey: Keys.tax.rawValue)
+     }
+    
+    func addValue(value: Double, key: Keys) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+}
+
 class BuyAdjustmentsViewController: UIViewController {
 
     private let data = CoredataManager()
@@ -29,15 +53,8 @@ class BuyAdjustmentsViewController: UIViewController {
     }
 
     func setupPreferences() {
-        let userPref = UserDefaults()
-
-        if let value = userPref.string(forKey: adjustmentView.quotationInput.accessibilityIdentifier!) {
-            adjustmentView.quotationInput.text = value
-        }
-
-        if let value = userPref.string(forKey: adjustmentView.taxInput.accessibilityIdentifier!) {
-            adjustmentView.taxInput.text = value
-        }
+        adjustmentView.quotationInput.text = "\(SettingsManager.shared.dollarValue)"
+        adjustmentView.taxInput.text = "\(SettingsManager.shared.taxValue)"
     }
 
     func loadData() {
@@ -176,11 +193,10 @@ extension BuyAdjustmentsViewController : UITableViewDelegate {
 
 extension BuyAdjustmentsViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let userPref = UserDefaults()
-
-        userPref.set(textField.text, forKey: textField.accessibilityIdentifier!)
-
-        userPref.synchronize()
+        guard let identifier = textField.accessibilityIdentifier,
+            let key = Keys(rawValue: identifier) else { return }
+        let value = textField.text?.doubleValue ?? 0.0
+        SettingsManager.shared.addValue(value: value, key: key)
     }
 }
 

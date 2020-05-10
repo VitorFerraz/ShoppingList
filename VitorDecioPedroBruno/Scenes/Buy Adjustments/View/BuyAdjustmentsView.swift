@@ -40,7 +40,7 @@ class BuyAdjustmentsView : UIView {
     let quotationInput: UITextField = {
         let field = UITextField()
 
-        field.accessibilityIdentifier = "quote"
+        field.accessibilityIdentifier = Keys.dollar.rawValue
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
         field.borderStyle = .roundedRect
@@ -51,7 +51,7 @@ class BuyAdjustmentsView : UIView {
     let taxInput: UITextField = {
         let field = UITextField()
 
-        field.accessibilityIdentifier = "tax"
+        field.accessibilityIdentifier = Keys.tax.rawValue
         field.placeholder = "0.0"
         field.keyboardType = .decimalPad
         field.borderStyle = .roundedRect
