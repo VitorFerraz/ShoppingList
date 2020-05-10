@@ -28,10 +28,6 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         navigationController?.show(newProductVc, sender: nil)
     }
     
-    @objc override func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
     private func setupNavigation() {
         title = "Lista de Compras"
         let addProductButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddProduct))
