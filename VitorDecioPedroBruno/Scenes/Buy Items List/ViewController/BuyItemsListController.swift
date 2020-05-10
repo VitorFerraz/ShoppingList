@@ -22,7 +22,7 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         items = products 
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-
+        
         view.addGestureRecognizer(tap)
     }
     
