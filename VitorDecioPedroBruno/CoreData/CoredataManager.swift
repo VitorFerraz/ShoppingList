@@ -48,7 +48,7 @@ class CoredataManager {
         return items
     }
     
-    func newProdut(name: String,
+    func newProduct(name: String,
                    creditCardBuy: Bool,
                    photo: UIImage,
                    price: Double,
@@ -84,7 +84,7 @@ extension CoredataManager {
         createStates()
         let states = try? fetchStates()
         states?.forEach({ (state) in
-            try? newProdut(name: "Teste", creditCardBuy: true, photo: #imageLiteral(resourceName: "gift"), price: 10.0, state: state)
+            try? newProduct(name: "Teste", creditCardBuy: true, photo: #imageLiteral(resourceName: "gift"), price: 10.0, state: state)
         })
     }
 }

@@ -37,6 +37,8 @@ class ProductCell: GenericCell<Product>, ViewConfigurator {
         didSet {
             nameLabel.text = item.name
             priceLabel.text = "\(item.price)"
+            guard let imageData = item.photo else { return }
+            productImage.image = UIImage(data: imageData)
         }
     }
     var nameLabel: UILabel = {
