@@ -29,13 +29,8 @@ class BuyAdjustmentsViewController: UIViewController {
     }
 
     func loadPreferences() {
-        if SettingsManager.shared.dollarValue > 0 {
-            adjustmentView.quotationInput.text = "\(SettingsManager.shared.dollarValue)"
-        }
-
-        if SettingsManager.shared.taxValue > 0 {
-            adjustmentView.taxInput.text = "\(SettingsManager.shared.taxValue)"
-        }
+        adjustmentView.quotationInput.text = "\(SettingsManager.shared.dollarValue)"
+        adjustmentView.taxInput.text = "\(SettingsManager.shared.taxValue)"
     }
 
     func loadData() {
