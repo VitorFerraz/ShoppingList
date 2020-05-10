@@ -26,7 +26,7 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc override func dismissKeyboard() {
         view.endEditing(true)
     }
     

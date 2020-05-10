@@ -17,7 +17,7 @@ class BuyItemsListViewModel {
     }
 
     func getBuyItems() -> [Product] {
-        products = coredataManager.fetchObjects()
+//        products = coredataManager.fetchObjects()
         return products
     }
 }
