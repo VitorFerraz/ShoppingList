@@ -36,7 +36,7 @@ class ProductCell: GenericCell<Product>, ViewConfigurator {
     override var item: Product! {
         didSet {
             nameLabel.text = item.name
-            priceLabel.text = "\(item.price)"
+            priceLabel.text = item.price.dollarCurrencyFormat
             guard let imageData = item.photo else { return }
             productImage.image = UIImage(data: imageData)
         }

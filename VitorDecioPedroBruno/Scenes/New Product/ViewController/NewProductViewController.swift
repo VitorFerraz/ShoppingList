@@ -44,11 +44,16 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchStates()
         cameraController.delegate = self
         if !isEditingProduct {
             title = "Cadastrar Produto"
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchStates()
+
     }
 
     override func loadView() {

@@ -16,7 +16,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     var tabControllers: [TabController] {
         let buyItemsNavController = templateNavController(image: #imageLiteral(resourceName: "suitcase-icon"),rootViewController: BuyItemsListController())
         let buyAdjustmentsNavController = templateNavController(image: #imageLiteral(resourceName: "gear-icon"),rootViewController: BuyAdjustmentsViewController())
+        buyAdjustmentsNavController.isNavigationBarHidden = true
+
         let totalNavController = templateNavController(image: #imageLiteral(resourceName: "suitcase-icon"),rootViewController: TotalViewController())
+        totalNavController.isNavigationBarHidden = true
 
         return [.init(title: "Compras", controller: buyItemsNavController),
                 .init(title: "Ajustes", controller: buyAdjustmentsNavController),
