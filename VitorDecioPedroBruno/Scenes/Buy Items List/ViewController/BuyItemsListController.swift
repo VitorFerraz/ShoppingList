@@ -20,9 +20,15 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         let products = viewModel.getBuyItems()
         print(products)
         items = products 
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+
+        view.addGestureRecognizer(tap)
     }
     
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     private func setupNavigation() {
         title = "Lista de Compras"
