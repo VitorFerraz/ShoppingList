@@ -10,6 +10,8 @@ import UIKit
 
 class BuyAdjustmentsViewController: UIViewController {
 
+    private let data = CoredataManager()
+    private var states: [State] = []
     private let adjustmentView = BuyAdjustmentsView()
 
     override func viewDidLoad() {
@@ -22,6 +24,10 @@ class BuyAdjustmentsViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+
     func setupPreferences() {
         let userPref = UserDefaults()
 
@@ -31,6 +37,16 @@ class BuyAdjustmentsViewController: UIViewController {
 
         if let value = userPref.string(forKey: adjustmentView.taxInput.accessibilityIdentifier!) {
             adjustmentView.taxInput.text = value
+        }
+    }
+
+    func loadData() {
+        do {
+            states = try data.fetchStates()
+
+            adjustmentView.statesTable.reloadData()
+        } catch {
+            print(error)
         }
     }
 
@@ -67,10 +83,32 @@ class BuyAdjustmentsViewController: UIViewController {
     }
 
     func addState(name: String, tax: Double, completion: (() -> Void)? = nil) {
-        // TODO data sync
+        do {
+            try data.newState(name: name, tax: tax)
 
-        if (completion != nil) {
-            completion!()
+            loadData()
+
+            if (completion != nil) {
+                completion!()
+            }
+        } catch {
+            print(error)
+        }
+    }
+
+    func removeState(state: State, completion: (() -> Void)? = nil) {
+        do {
+            data.delete(item: state)
+
+            try data.save()
+
+            loadData()
+
+            if (completion != nil) {
+                completion!()
+            }
+        } catch {
+            print(error)
         }
     }
 }
@@ -80,6 +118,7 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
     func addViewHierarchy() {
         adjustmentView.quotationInput.delegate = self
         adjustmentView.taxInput.delegate = self
+        adjustmentView.statesTable.dataSource = self
         adjustmentView.statesTable.delegate = self
         adjustmentView.addStateButton.addTarget(self, action: #selector(openStateModal), for: .touchUpInside)
 
@@ -97,8 +136,42 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
 
 }
 
-extension BuyAdjustmentsViewController : UITableViewDelegate {
+extension BuyAdjustmentsViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return states.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reusableId = "stateTax"
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusableId)
+
+        if (cell == nil) {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: reusableId)
+
+            cell?.detailTextLabel?.textColor = .red
+        }
+
+        let state = states[indexPath.row]
+
+        cell?.textLabel?.text = state.name
+        cell?.detailTextLabel?.text = "\(state.tax)"
+
+        return cell!
+    }
+}
+
+extension BuyAdjustmentsViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let state = states[indexPath.row]
+
+            removeState(state: state)
+        }
+    }
 }
 
 extension BuyAdjustmentsViewController : UITextFieldDelegate {
