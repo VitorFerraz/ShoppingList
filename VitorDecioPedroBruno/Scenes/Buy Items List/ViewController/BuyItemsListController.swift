@@ -12,10 +12,6 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
     var coredataManager = CoredataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let procut = Product(context: coredataManager.context)
-        procut.name = "teste"
-        try? coredataManager.save()
-        items = [procut]
         setupNavigation()
     }
     
