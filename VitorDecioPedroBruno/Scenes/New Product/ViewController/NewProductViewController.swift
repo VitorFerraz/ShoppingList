@@ -29,6 +29,7 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
     func setEditingState(product: Product? = nil) {
         isEditingProduct = true
+        didSelectImage = true
         selectedState = product?.state
         editedProduct = product
         title = "Editar Produto"
@@ -85,6 +86,9 @@ extension NewProductViewController: NewProductViewDelegate {
     }
 
     func didSelectPickerState(at index: Int) {
+        if states.isEmpty {
+            return
+        }
         selectedState = states[index]
     }
 

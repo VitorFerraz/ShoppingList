@@ -74,6 +74,7 @@ final class NewProductView: UIView {
         field.borderStyle = .roundedRect
         field.placeholder = "Estado da compra"
         field.inputView = pickerState
+        field.delegate = self
         field.setContentCompressionResistancePriority(.required, for: .vertical)
         field.inputAccessoryView = pickerToolbar
         return field
@@ -201,7 +202,7 @@ extension NewProductView: ViewConfigurator {
     }
 }
 
-extension NewProductView: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+extension NewProductView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -214,6 +215,13 @@ extension NewProductView: UIPickerViewDelegate, UIPickerViewDataSource, UITextFi
         return delegate?.pickerTitle(at: row)
     }
 }
+
+extension NewProductView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+}
+
 
 protocol NewProductViewDelegate {
     func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double)
