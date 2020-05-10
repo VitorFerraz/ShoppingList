@@ -16,5 +16,17 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         procut.name = "teste"
         try? coredataManager.save()
         items = [procut]
+        setupNavigation()
+    }
+    
+    private func setupNavigation() {
+        title = "Lista de Compras"
+        let addProductButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddProduct))
+        navigationItem.rightBarButtonItem = addProductButton
+    }
+    
+    @objc private func showAddProduct() {
+        let newProductVc = NewProductViewController()
+        navigationController?.show(newProductVc, sender: nil)
     }
 }
