@@ -16,14 +16,16 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
-        
-        let products = viewModel.getBuyItems()
-        print(products)
-        items = products 
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        items = viewModel.getBuyItems()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = viewModel.products[indexPath.row]
+        let newProductVc = NewProductViewController()
+        navigationController?.show(newProductVc, sender: nil)
     }
     
     @objc override func dismissKeyboard() {
