@@ -9,11 +9,20 @@
 import UIKit
 
 class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
+    
+    let viewModel = BuyItemsListViewModel()
     var coredataManager = CoredataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        
+        let products = viewModel.getBuyItems()
+        print(products)
+        items = products 
     }
+    
+    
     
     private func setupNavigation() {
         title = "Lista de Compras"
@@ -25,4 +34,5 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         let newProductVc = NewProductViewController()
         navigationController?.show(newProductVc, sender: nil)
     }
+    
 }
