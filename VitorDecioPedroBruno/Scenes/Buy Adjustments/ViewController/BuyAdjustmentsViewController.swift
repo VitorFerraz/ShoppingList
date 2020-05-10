@@ -8,30 +8,6 @@
 
 import UIKit
 
-enum Keys: String {
-    case dollar
-    case tax
-    case sbDollar
-    case sbTax
-}
-
-struct SettingsManager {
-    static let shared = SettingsManager()
-    private init() {}
-    var dollarValue: Double {
-        return UserDefaults.standard.double(forKey: Keys.sbDollar.rawValue)
-    }
-    
-    var taxValue: Double {
-         return UserDefaults.standard.double(forKey: Keys.tax.rawValue)
-     }
-    
-    func addValue(value: Double, key: Keys) {
-        UserDefaults.standard.set(value, forKey: key.rawValue)
-        UserDefaults.standard.synchronize()
-    }
-}
-
 class BuyAdjustmentsViewController: UIViewController {
 
     private let data = CoredataManager()
@@ -43,18 +19,23 @@ class BuyAdjustmentsViewController: UIViewController {
 
         setup()
 
-        setupPreferences()
-
         hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+
+        loadPreferences()
     }
 
-    func setupPreferences() {
-        adjustmentView.quotationInput.text = "\(SettingsManager.shared.dollarValue)"
-        adjustmentView.taxInput.text = "\(SettingsManager.shared.taxValue)"
+    func loadPreferences() {
+        if SettingsManager.shared.dollarValue > 0 {
+            adjustmentView.quotationInput.text = "\(SettingsManager.shared.dollarValue)"
+        }
+
+        if SettingsManager.shared.taxValue > 0 {
+            adjustmentView.taxInput.text = "\(SettingsManager.shared.taxValue)"
+        }
     }
 
     func loadData() {
