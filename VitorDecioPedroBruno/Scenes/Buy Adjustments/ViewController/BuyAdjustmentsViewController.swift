@@ -19,6 +19,8 @@ class BuyAdjustmentsViewController: UIViewController {
 
         setup()
 
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         hideKeyboardWhenTappedAround()
     }
 
@@ -38,6 +40,7 @@ class BuyAdjustmentsViewController: UIViewController {
             states = try data.fetchStates()
 
             adjustmentView.statesTable.reloadData()
+            adjustmentView.statesTable.backgroundView = !states.isEmpty ? nil : adjustmentView.emptyMessageLabel
         } catch {
             print(error)
         }
