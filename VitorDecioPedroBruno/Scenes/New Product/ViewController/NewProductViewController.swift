@@ -9,13 +9,27 @@
 import UIKit
 
 final class NewProductViewController: UIViewController, CameraAlertControllerDelegate {
+
+    var coredataManager = CoredataManager()
+
+    private var states = [State]()
+    private var selectedState: State?
+    private var isEditingProduct = false
+    private var editedProduct: Product? = nil
+
     func presentFromAlert(_ viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
     }
     
     func didSelectedImage(_ image: UIImage) {
         customView.imageButton.setImage(image, for: .normal)
+    }
 
+    func setEditingState(_ state: Bool, product: Product? = nil) {
+        isEditingProduct = state
+        selectedState = product?.state
+        editedProduct = product
+        customView.set(product: product)
     }
     
     let cameraController = CameraAlertController()
@@ -27,27 +41,84 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchStates()
         cameraController.delegate = self
     }
 
     override func loadView() {
         view = customView
     }
+
+    private func fetchStates() {
+        do {
+            states = try coredataManager.fetchStates()
+        } catch {
+            print("error trying to fetch states")
+        }
+
+    }
 }
 
 extension NewProductViewController: NewProductViewDelegate {
-    func didTapConver() {
+    func didTapAddState() {
+        navigationController?.tabBarController?.selectedIndex = 1
+    }
+
+    func showErrorAlert() {
+        let alert = UIAlertController(title: "Erro ao salvar", message: "Preencha todos os dados corretamente para continuar", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+
+        navigationController?.present(alert, animated: true)
+    }
+
+    func didSelectPickerState(at index: Int) {
+        selectedState = states[index]
+    }
+
+    func getSelectedPickerIndex() -> Int {
+        guard let state = selectedState else { return 0 }
+        return states.firstIndex(of: state) ?? 0
+    }
+
+    func pickerNumberOfRows() -> Int {
+        return states.count
+    }
+
+    func pickerTitle(at index: Int) -> String? {
+        return states[index].name
+    }
+
+    func didTapCover() {
         let alert = cameraController.alert
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func didTapState() {
-        print("Chamar a tela do Pedro")
-    }
 
-    func didTapSave() {
-        print("clicou para salvar o produto")
-        // cadastrar produto
+    func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double) {
+        guard let state = selectedState else {
+            showErrorAlert()
+            return
+        }
+        do {
+            if isEditingProduct {
+                editedProduct?.name = name
+                editedProduct?.creditCardBuy = creditCardBuy
+                editedProduct?.photo = photo.pngData()
+                editedProduct?.price = price
+                editedProduct?.state = selectedState
+                try coredataManager.save()
+
+            } else {
+                try coredataManager.newProduct(name: name,
+                                               creditCardBuy: creditCardBuy,
+                                               photo: photo,
+                                               price: price,
+                                               state: state)
+            }
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

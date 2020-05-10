@@ -15,11 +15,34 @@ final class NewProductView: UIView {
 
     // MARK: - Elements
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [nameField, imageButton, purchaseStateStack, cashStack, saveButton])
+        let stack = UIStackView(arrangedSubviews: [nameField,
+                                                   imageButton,
+                                                   purchaseStateStack,
+                                                   cashStack,
+                                                   saveButton])
         stack.spacing = 16
         stack.alignment = .fill
         stack.axis = .vertical
         return stack
+    }()
+
+    private lazy var pickerState: UIPickerView = {
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        return picker
+    }()
+
+    private lazy var pickerToolbar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.sizeToFit()
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.didTapPickerCancel))
+        let leftSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.didTapPickerDone))
+        toolBar.setItems([cancel, leftSpace, done], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        return toolBar
     }()
 
     private let nameField: UITextField = {
@@ -46,16 +69,19 @@ final class NewProductView: UIView {
         return stack
     }()
 
-    private let purchaseStateField: UITextField = {
+    private lazy var purchaseStateField: UITextField = {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.placeholder = "Estado da compra"
+        field.inputView = pickerState
         field.setContentCompressionResistancePriority(.required, for: .vertical)
+        field.inputAccessoryView = pickerToolbar
         return field
     }()
 
     private let plusButton: UIButton = {
         let button = UIButton(type: .contactAdd)
+        button.addTarget(self, action: #selector(didTapAddState), for: .touchUpInside)
         return button
     }()
 
@@ -112,13 +138,51 @@ final class NewProductView: UIView {
 extension NewProductView {
     @objc
     private func didTapSave() {
-        delegate?.didTapSave()
+        guard
+            let name = nameField.text,
+            let image = imageButton.imageView?.image,
+            let cashText = cashField.text,
+            let price = Double(cashText) else {
+                delegate?.showErrorAlert()
+                return
+        }
+
+        delegate?.didTapSave(name: name, creditCardBuy: cardSwitch.isOn, photo: image, price: price)
     }
 
     @objc
     private func didTapCover() {
-        print("clicou na imagem");
-        delegate?.didTapConver()
+        delegate?.didTapCover()
+    }
+
+    @objc
+    private func didTapPickerDone() {
+        let index = pickerState.selectedRow(inComponent: 0)
+        delegate?.didSelectPickerState(at: index)
+        purchaseStateField.text = delegate?.pickerTitle(at: index)
+        endEditing(true)
+    }
+
+    @objc
+    private func didTapPickerCancel() {
+        endEditing(true)
+        pickerState.selectRow(delegate?.getSelectedPickerIndex() ?? 0, inComponent: 0, animated: false)
+    }
+
+    @objc
+    private func didTapAddState() {
+        delegate?.didTapAddState()
+    }
+
+    func set(product: Product?) {
+        guard let product = product else { return }
+        nameField.text = product.name
+        purchaseStateField.text = product.state?.name
+        cashField.text = "\(product.price)"
+        cardSwitch.setOn(product.creditCardBuy, animated: false)
+        if let imageData = product.photo {
+            imageButton.setImage(UIImage(data: imageData), for: .normal)
+        }
     }
 }
 
@@ -135,8 +199,27 @@ extension NewProductView: ViewConfigurator {
     }
 }
 
+extension NewProductView: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return delegate?.pickerNumberOfRows() ?? 0
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return delegate?.pickerTitle(at: row)
+    }
+}
+
 protocol NewProductViewDelegate {
-    func didTapSave()
-    func didTapState()
-    func didTapConver()
+    func didTapSave(name: String, creditCardBuy: Bool, photo: UIImage, price: Double)
+    func didTapCover()
+    func pickerNumberOfRows() -> Int
+    func pickerTitle(at index: Int) -> String?
+    func didSelectPickerState(at index: Int)
+    func getSelectedPickerIndex() -> Int
+    func showErrorAlert()
+    func didTapAddState()
 }

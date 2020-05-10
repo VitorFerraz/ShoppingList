@@ -22,11 +22,5 @@ class CoreDataTests: XCTestCase {
         super.tearDown()
         manager = nil
     }
-    
-    func testLoadFakeItems() {
-        manager.createFakeData()
-        XCTAssertGreaterThan(try! manager.fetchStates().count, 1)
-        XCTAssertGreaterThan(try! manager.fetchProducts().count, 1)
-    }
 
 }
