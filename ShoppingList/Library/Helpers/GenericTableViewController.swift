@@ -10,13 +10,9 @@ import UIKit
 class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
     
     /// An array of U objects this list will render. When using items.append, you still need to manually call reloadData.
-
     var items = [U]() {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.tableView.backgroundView = self.items.isEmpty ? self.emptyMessageLabel : nil
-            }
+            reloadData()
         }
     }
     lazy var emptyMessageLabel: UILabel = {
@@ -46,9 +42,15 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
         tableView.backgroundColor = .systemBackground
         tableView.tableFooterView = UIView()
         tableView.register(T.self, forCellReuseIdentifier: cellId)
-
+        reloadData()
     }
     
+    fileprivate func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.backgroundView = self.items.isEmpty ? self.emptyMessageLabel : nil
+        }
+    }
     /// ListHeaderController automatically dequeues your T cell and sets the correct item object on it.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? T else { return UITableViewCell() }

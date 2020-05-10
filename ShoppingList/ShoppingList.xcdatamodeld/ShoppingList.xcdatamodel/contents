@@ -13,11 +13,7 @@
         <attribute name="name" attributeType="String"/>
         <relationship name="products" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="state" inverseEntity="Product"/>
     </entity>
-    <entity name="Teste" representedClassName="Teste" syncable="YES" codeGenerationType="class">
-        <attribute name="title" optional="YES" attributeType="String"/>
-    </entity>
     <elements>
-        <element name="Teste" positionX="-230.79296875" positionY="-1.703125" width="128" height="58"/>
         <element name="Product" positionX="-63" positionY="-9" width="128" height="118"/>
         <element name="State" positionX="153.03515625" positionY="-20.75390625" width="128" height="103"/>
     </elements>
