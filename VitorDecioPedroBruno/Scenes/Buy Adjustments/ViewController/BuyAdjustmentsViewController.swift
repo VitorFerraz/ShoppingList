@@ -50,17 +50,26 @@ class BuyAdjustmentsViewController: UIViewController {
         }
     }
 
-    @objc func openStateModal(sender: UIButton) {
+    @objc func tapAddState(sender: UIButton) {
+        openStateModal(state: nil)
+    }
+
+    func openStateModal(state: State?) {
         let modal = UIAlertController(
             title: "Adicionar estado",
             message: nil,
             preferredStyle: .alert)
 
         modal.addTextField { (field) in
+            field.text = state?.name
             field.placeholder = "Nome do estado"
         }
 
         modal.addTextField { (field) in
+            if (state != nil) {
+                field.text = "\(state?.tax ?? 0)"
+            }
+
             field.placeholder = "Imposto"
             field.keyboardType = .decimalPad
         }
@@ -75,16 +84,23 @@ class BuyAdjustmentsViewController: UIViewController {
 
             if (stateName.isEmpty || taxValue.isEmpty) { return }
 
-            self.addState(name: stateName, tax: taxValue.doubleValue) {
+            self.addState(name: stateName, tax: taxValue.doubleValue, state: state) {
             }
         }))
 
         present(modal, animated: true, completion: nil)
     }
 
-    func addState(name: String, tax: Double, completion: (() -> Void)? = nil) {
+    func addState(name: String, tax: Double, state: State?, completion: (() -> Void)? = nil) {
         do {
-            try data.newState(name: name, tax: tax)
+            if (state == nil) {
+                try data.newState(name: name, tax: tax)
+            } else {
+                state?.name = name
+                state?.tax = tax
+
+                try data.save()
+            }
 
             loadData()
 
@@ -120,7 +136,7 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
         adjustmentView.taxInput.delegate = self
         adjustmentView.statesTable.dataSource = self
         adjustmentView.statesTable.delegate = self
-        adjustmentView.addStateButton.addTarget(self, action: #selector(openStateModal), for: .touchUpInside)
+        adjustmentView.addStateButton.addTarget(self, action: #selector(tapAddState), for: .touchUpInside)
 
         view.addSubview(adjustmentView)
     }
@@ -171,6 +187,12 @@ extension BuyAdjustmentsViewController : UITableViewDelegate {
 
             removeState(state: state)
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let state = states[indexPath.row]
+
+        openStateModal(state: state)
     }
 }
 
