@@ -77,7 +77,7 @@ class BuyAdjustmentsViewController: UIViewController {
             let stateName = modal.textFields![0].text!
             let taxValue = modal.textFields![1].text!
 
-            if (stateName.isEmpty || taxValue.isEmpty) { return }
+            if (stateName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || taxValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) { return }
 
             self.addState(name: stateName, tax: taxValue.doubleValue, state: state) {
             }
