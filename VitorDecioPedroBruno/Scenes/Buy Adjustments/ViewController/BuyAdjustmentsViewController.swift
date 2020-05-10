@@ -17,13 +17,12 @@ class BuyAdjustmentsViewController: UIViewController {
 
         setup()
 
+        setupPreferences()
+
         hideKeyboardWhenTappedAround()
     }
-}
 
-extension BuyAdjustmentsViewController : ViewConfigurator {
-
-    func addViewHierarchy() {
+    func setupPreferences() {
         let userPref = UserDefaults()
 
         if let value = userPref.string(forKey: adjustmentView.quotationInput.accessibilityIdentifier!) {
@@ -33,7 +32,12 @@ extension BuyAdjustmentsViewController : ViewConfigurator {
         if let value = userPref.string(forKey: adjustmentView.taxInput.accessibilityIdentifier!) {
             adjustmentView.taxInput.text = value
         }
+    }
+}
 
+extension BuyAdjustmentsViewController : ViewConfigurator {
+
+    func addViewHierarchy() {
         adjustmentView.quotationInput.delegate = self
         adjustmentView.taxInput.delegate = self
         adjustmentView.statesTable.delegate = self
