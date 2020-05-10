@@ -93,6 +93,9 @@ extension NewProductViewController: NewProductViewDelegate {
     }
 
     func pickerTitle(at index: Int) -> String? {
+        if states.isEmpty {
+            return ""
+        }
         return states[index].name
     }
 
