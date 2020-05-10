@@ -11,13 +11,11 @@ import Foundation
 class BuyItemsListViewModel {
     let coredataManager = CoredataManager()
     var products: [Product] = []
-    
-    init() {
-//        coredataManager.addTestProduct()
-    }
 
     func getBuyItems() -> [Product] {
-//        products = coredataManager.fetchObjects()
+        do {
+            try products = coredataManager.fetchProducts()
+        } catch { }
         return products
     }
 }

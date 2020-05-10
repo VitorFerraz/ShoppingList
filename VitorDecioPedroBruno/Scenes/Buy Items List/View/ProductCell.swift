@@ -36,7 +36,7 @@ class ProductCell: GenericCell<Product>, ViewConfigurator {
     override var item: Product! {
         didSet {
             nameLabel.text = item.name
-            priceLabel.text = item.name
+            priceLabel.text = "\(item.price)"
         }
     }
     var nameLabel: UILabel = {
