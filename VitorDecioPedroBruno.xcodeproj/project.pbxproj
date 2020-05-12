@@ -37,6 +37,7 @@
 		90A28F602465C609000DDA58 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */; };
 		90A28F622465C646000DDA58 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A28F612465C646000DDA58 /* GenericCell.swift */; };
 		90B60B91246333A0000462A0 /* CameraAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B60B90246333A0000462A0 /* CameraAlertController.swift */; };
+		90CD34C3246AEA360086B00F /* KeyboardWillChange+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD34C2246AEA360086B00F /* KeyboardWillChange+Handler.swift */; };
 		ED3A1E8A2468769100D88E78 /* BuyItemsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A1E892468769100D88E78 /* BuyItemsListViewModel.swift */; };
 		ED3A1E8D246891AC00D88E78 /* TotalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A1E8C246891AC00D88E78 /* TotalViewModel.swift */; };
 		EDA22249245F3FE200D94EF0 /* BuyItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA22242245F3FE100D94EF0 /* BuyItemsListView.swift */; };
@@ -89,6 +90,7 @@
 		90A28F5F2465C609000DDA58 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		90A28F612465C646000DDA58 /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
 		90B60B90246333A0000462A0 /* CameraAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertController.swift; sourceTree = "<group>"; };
+		90CD34C2246AEA360086B00F /* KeyboardWillChange+Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardWillChange+Handler.swift"; sourceTree = "<group>"; };
 		ED3A1E892468769100D88E78 /* BuyItemsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemsListViewModel.swift; sourceTree = "<group>"; };
 		ED3A1E8C246891AC00D88E78 /* TotalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewModel.swift; sourceTree = "<group>"; };
 		EDA22242245F3FE100D94EF0 /* BuyItemsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsListView.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				90A28F612465C646000DDA58 /* GenericCell.swift */,
 				51EC036F24687976007195DD /* UIViewController+KeyboardDismiss.swift */,
 				51EC03732468A20A007195DD /* SettingsManager.swift */,
+				90CD34C2246AEA360086B00F /* KeyboardWillChange+Handler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				903BB3DF245F05EB0074CB4E /* LoadingButton.swift in Sources */,
 				EDA2224F245F407800D94EF0 /* TotalViewController.swift in Sources */,
 				903BB3DA245F05770074CB4E /* Formatter+Percentage.swift in Sources */,
+				90CD34C3246AEA360086B00F /* KeyboardWillChange+Handler.swift in Sources */,
 				903BB3E4245F063F0074CB4E /* Observable.swift in Sources */,
 				ED3A1E8A2468769100D88E78 /* BuyItemsListViewModel.swift in Sources */,
 				903BB3D2245F04DF0074CB4E /* UIView+Constraints.swift in Sources */,

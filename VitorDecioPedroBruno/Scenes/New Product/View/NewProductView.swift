@@ -32,7 +32,17 @@ final class NewProductView: UIView {
         picker.dataSource = self
         return picker
     }()
+    private lazy var genericToolBar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.sizeToFit()
 
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.didTapGenericToolBarCancel))
+        toolBar.setItems([space, done], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        return toolBar
+    }()
     private lazy var pickerToolbar: UIToolbar = {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -45,10 +55,11 @@ final class NewProductView: UIView {
         return toolBar
     }()
 
-    private let nameField: UITextField = {
+    private lazy var nameField: UITextField = {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.placeholder = "Nome do Produto"
+        field.inputAccessoryView = genericToolBar
         return field
     }()
 
@@ -92,10 +103,11 @@ final class NewProductView: UIView {
         return stack
     }()
 
-    private let cashField: UITextField = {
+    private lazy var cashField: UITextField = {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.placeholder = "Valor (U$)"
+        field.inputAccessoryView = genericToolBar
         return field
     }()
 
@@ -162,6 +174,11 @@ extension NewProductView {
         let index = pickerState.selectedRow(inComponent: 0)
         delegate?.didSelectPickerState(at: index)
         purchaseStateField.text = delegate?.pickerTitle(at: index)
+        endEditing(true)
+    }
+
+    @objc
+    private func didTapGenericToolBarCancel() {
         endEditing(true)
     }
 

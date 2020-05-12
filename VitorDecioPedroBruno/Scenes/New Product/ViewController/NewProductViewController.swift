@@ -49,6 +49,7 @@ final class NewProductViewController: UIViewController, CameraAlertControllerDel
         if !isEditingProduct {
             title = "Cadastrar Produto"
         }
+        self.view.bindToKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
