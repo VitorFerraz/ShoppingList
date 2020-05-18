@@ -107,6 +107,7 @@ final class NewProductView: UIView {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.placeholder = "Valor (U$)"
+        field.keyboardType = .decimalPad
         field.inputAccessoryView = genericToolBar
         return field
     }()

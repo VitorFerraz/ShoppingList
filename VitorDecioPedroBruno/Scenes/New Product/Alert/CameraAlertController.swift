@@ -22,14 +22,14 @@ class CameraAlertController: NSObject {
    
     private func setupOptions(on alert: UIAlertController) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            let camera = UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            let camera = UIAlertAction(title: "Câmera", style: .default, handler: { _ in
                 self.openCamera()
             })
             alert.addAction(camera)
         }
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
-            let gallery = UIAlertAction(title: "Galeria", style: .default, handler: { _ in
+            let gallery = UIAlertAction(title: "Biblioteca de fotos", style: .default, handler: { _ in
                 self.openGallery()
             })
             alert.addAction(gallery)
