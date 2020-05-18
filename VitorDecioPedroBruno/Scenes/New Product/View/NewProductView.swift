@@ -153,7 +153,7 @@ extension NewProductView {
     private func didTapSave() {
         guard
             let name = nameField.text,
-            name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
             let image = imageButton.imageView?.image,
             let cashText = cashField.text,
             let price = Double(cashText) else {

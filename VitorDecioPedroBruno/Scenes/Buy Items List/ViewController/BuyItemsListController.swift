@@ -40,4 +40,17 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
         navigationController?.show(newProductVc, sender: nil)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        let item = items[indexPath.row]
+        do {
+            coredataManager.delete(item: item)
+            try coredataManager.save()
+            items = viewModel.getBuyItems()
+            reloadData()
+        } catch {
+            print(error)
+        }
+    }
+    
 }

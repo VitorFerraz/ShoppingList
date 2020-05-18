@@ -45,7 +45,7 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
         reloadData()
     }
     
-    fileprivate func reloadData() {
+    func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.tableView.backgroundView = self.items.isEmpty ? self.emptyMessageLabel : nil
