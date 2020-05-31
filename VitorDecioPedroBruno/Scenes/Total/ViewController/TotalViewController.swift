@@ -26,6 +26,7 @@ class TotalViewController: UIViewController {
     }
     
     func updateTotals() {
+        viewModel.fetchData()
         totalView.lbTotalDollarValue.text = viewModel.getTotalDollar()
         totalView.lbTotalReaisValue.text = viewModel.getTotalReais()
     }

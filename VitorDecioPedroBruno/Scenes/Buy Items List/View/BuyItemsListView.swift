@@ -15,7 +15,7 @@ class BuyItemsListView: UIView {
     let lbEmpty: UILabel = {
        let label = UILabel()
         label.text = "Sua lista está vazia!"
-        label.textColor = .black
+        label.textColor = .darkText
         label.textAlignment = .center
         return label
     }()

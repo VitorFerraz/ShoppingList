@@ -141,7 +141,7 @@ final class NewProductView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        backgroundColor = .white
+        backgroundColor = .systemBackground
     }
     
     required init?(coder: NSCoder) {

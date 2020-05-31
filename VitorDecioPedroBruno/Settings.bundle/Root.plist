@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>Cotação do dólar (R$)</string>
 			<key>DefaultValue</key>
-			<string>3.16</string>
+			<string>3.2</string>
 			<key>Key</key>
 			<string>kDollar</string>
 			<key>KeyboardType</key>

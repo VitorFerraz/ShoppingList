@@ -9,7 +9,7 @@
 import Foundation
 
 struct SettingsDefault {
-    static let DollarDefault = 3.16
+    static let DollarDefault = 3.2
     static let TaxDefault = 6.38
 }
 

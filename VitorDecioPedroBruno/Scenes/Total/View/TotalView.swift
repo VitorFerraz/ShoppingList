@@ -17,7 +17,6 @@ class TotalView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Total em U$:"
-        label.textColor = .black
         return label
     }()
     
@@ -34,7 +33,6 @@ class TotalView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Total em R$:"
-        label.textColor = .black
         return label
     }()
     

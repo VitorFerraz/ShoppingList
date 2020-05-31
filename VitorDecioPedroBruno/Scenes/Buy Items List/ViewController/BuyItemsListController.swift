@@ -30,7 +30,7 @@ class BuyItemsListController: GenericTableViewController<ProductCell, Product> {
     }
     
     private func setupNavigation() {
-        title = "Lista de Compras"
+        self.navigationItem.title = "Lista de Compras"
         let addProductButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddProduct))
         navigationItem.rightBarButtonItem = addProductButton
     }

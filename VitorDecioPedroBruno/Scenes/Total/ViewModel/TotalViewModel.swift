@@ -16,6 +16,10 @@ class TotalViewModel {
     let DOLLAR_PRICE: Double = SettingsManager.shared.dollarValue
     
     init() {
+        fetchData()
+    }
+    
+    func fetchData() {
         do {
             try products = coredataManager.fetchProducts()
             try states = coredataManager.fetchStates()
